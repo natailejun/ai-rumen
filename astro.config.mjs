@@ -4,7 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ai-rumen.pages.dev',
+  site: 'https://natailejun.github.io',
+  base: '/ai-rumen',
   integrations: [
     starlight({
       title: 'AI 入门指南',
