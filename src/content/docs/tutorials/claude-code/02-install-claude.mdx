@@ -1,0 +1,258 @@
+---
+title: 安装并配置 Claude Code
+description: 获取 API Key，用 npm 安装 Claude Code，完成初始配置
+sidebar:
+  order: 2
+series: claude-code
+seriesOrder: 2
+difficulty: beginner
+estimatedTime: '15 分钟'
+tools:
+  - name: Node.js 已安装
+  - name: Anthropic 账号（免费注册）
+  - name: 科学上网环境
+screenshotCount: 5
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你的电脑上会有：
+
+- ✅ 一个 Anthropic 账号和 API Key
+- ✅ Claude Code CLI 安装完成
+- ✅ Claude Code 可以正常工作
+
+---
+
+## 什么是 Claude Code？
+
+**Claude Code** 是 Anthropic 公司推出的命令行 AI 编程助手。
+
+简单来说：
+
+- 你在命令行里用**中文描述**你想做什么
+- Claude Code 会自己写代码、创建文件、改 bug
+- 你不需要手写代码，只需要**对话**
+
+> 💡 和 ChatGPT 的区别：ChatGPT 是聊天网页，Claude Code 是命令行工具。两者都是 AI，但用途不同——ChatGPT 擅长通用对话，Claude Code 专精编程。
+
+---
+
+## 第一步：注册 Anthropic 账号并获取 API Key
+
+### 1.1 访问 Anthropic 控制台
+
+1. 确保**科学上网已开启**
+2. 浏览器访问 **[console.anthropic.com](https://console.anthropic.com)**
+
+<Screenshot
+  src="/images/tutorials/claude-code/anthropic-console.png"
+  alt="Anthropic Console 截图"
+  caption="图：Anthropic 控制台登录页面"
+/>
+
+### 1.2 注册账号
+
+1. 点击 **Sign Up**（注册）或 **Log In**（如果已有账号）
+2. 可以用 **Google 账号** 或 **邮箱** 注册
+3. 完成邮箱验证后，进入控制台
+
+<Screenshot
+  src="/images/tutorials/claude-code/anthropic-console-dashboard.png"
+  alt="Anthropic 控制台首页截图"
+  caption="图：注册/登录后进入的控制台首页"
+/>
+
+### 1.3 获取 API Key
+
+<WarningCallout title="重要提醒">
+  API Key 相当于你的账号密码——有了它就能以你的身份使用 Claude 的付费服务。<strong>不要分享给任何人，不要上传到公开仓库。</strong>
+</WarningCallout>
+
+1. 在控制台左侧菜单中找到 **API Keys**
+2. 点击 **Create Key** 按钮
+
+<Screenshot
+  src="/images/tutorials/claude-code/create-api-key.png"
+  alt="创建 API Key 页面截图"
+  caption="图：设置 Key 名称并点击 Create"
+/>
+
+3. 输入一个名字（随便写，比如 `my-claude-code`）
+4. 点击 **Create**
+5. **立刻复制 Key！** 关闭弹窗后就再也看不到完整的 Key 了
+
+<Screenshot
+  src="/images/tutorials/claude-code/api-key-created.png"
+  alt="API Key 创建完成截图"
+  caption="图：⚠️ 立即复制这个 Key 并妥善保存！"
+/>
+
+> 📋 **Key 的格式**：`sk-ant-api03-` 开头 + 一长串字符。复制到一个**安全的地方**（记事本就行），后面马上要用。
+
+### 1.4 充值（如果需要）
+
+Claude Code 使用 Anthropic API 是**按量付费**的（不像 ChatGPT 是固定月费）：
+
+| 使用方式 | 费用 |
+|---------|------|
+| 通过 Claude Code CLI | API 按量计费 |
+| 充值方式 | 支持信用卡（需国际信用卡） |
+
+> 💡 **关于费用**：轻度使用（一天写几个小项目）大概 1-3 美元/天。具体看你的使用量。Anthropic 有免费额度，新用户可以用一小段时间再决定是否充值。
+
+如果你暂时没有国际信用卡，可以先不充值，用免费额度试试看。
+
+---
+
+## 第二步：安装 Claude Code CLI
+
+### 2.1 打开终端
+
+**Windows 用户**：
+- 按 **Win + R**，输入 `cmd`，回车
+- 或：在开始菜单搜索 "命令提示符"
+
+**Mac 用户**：
+- Spotlight 搜索 "Terminal"
+- 或：在应用程序 → 实用工具 → 终端
+
+### 2.2 执行安装命令
+
+在终端中输入以下命令并回车：
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+<Screenshot
+  src="/images/tutorials/claude-code/npm-install.png"
+  alt="npm install 安装过程的命令行截图"
+  caption="图：安装过程中看到进度条和 Downloaded 字样说明正在安装"
+/>
+
+等待 1-2 分钟。你会看到一些下载进度和安装日志。
+
+**Mac/Linux 用户**如果遇到权限错误（`EACCES`），在前面加 `sudo`：
+
+```bash
+sudo npm install -g @anthropic-ai/claude-code
+```
+
+输入你的 Mac 密码（输入时看不到任何字，这是正常的），回车。
+
+### 2.3 验证安装
+
+安装完成后，输入：
+
+```bash
+claude --version
+```
+
+如果看到版本号（类似 `v1.0.0`）→ ✅ 安装成功！
+
+---
+
+## 第三步：配置 API Key
+
+安装完 Claude Code 后，需要把 API Key 告诉它。
+
+### 方法一：全局配置（推荐）
+
+```bash
+claude config set ANTHROPIC_API_KEY "你的API_Key"
+```
+
+把 `你的API_Key` 替换成你刚才复制的那个 `sk-ant-api03-...` 开头的 Key。
+
+**示例**（不要真的用这个，这只是举例）：
+
+```bash
+claude config set ANTHROPIC_API_KEY "sk-ant-api03-abcdefghijklmnopqrstuvwxyz123456"
+```
+
+### 方法二：项目级配置（更安全）
+
+如果你不希望 Key 全局生效，可以在每个项目文件夹里放一个 `.env` 文件：
+
+```bash
+echo "ANTHROPIC_API_KEY=你的API_Key" > .env
+```
+
+<WarningCallout title="安全提醒" type="danger">
+  <strong>一定要把 .env 文件加入 .gitignore！</strong><br />
+  如果不上传 GitHub 的话就不用担心。但如果你用 Git 管理项目，务必确保 API Key 不会被提交到公开仓库。<br />
+  最简单的方法：在项目根目录创建 .gitignore 文件，里面加一行 <code>.env</code>。
+</WarningCallout>
+
+---
+
+## 第四步：测试 Claude Code 是否正常
+
+现在来做一个快速测试：
+
+1. 在终端中输入：
+
+```bash
+claude
+```
+
+2. 如果一切正常，你会进入 Claude Code 的交互界面（REPL）
+3. 试着输入一句话：
+
+```
+你好，请用中文回答。简单介绍一下你能做什么。
+```
+
+4. Claude Code 应该会开始回复
+
+<Screenshot
+  src="/images/tutorials/claude-code/first-interaction.png"
+  alt="Claude Code 第一次交互截图"
+  caption="图：Claude Code 正常运行的样子"
+/>
+
+5. 输入 `/exit` 或按 `Ctrl+C` 退出
+
+---
+
+## 常见问题
+
+<FAQItem question="claude: command not found（找不到 claude 命令）">
+  <strong>Windows</strong>：关闭当前的命令提示符，重新打开一个新的。如果还不行，重启电脑。
+  <br /><br />
+  <strong>Mac</strong>：尝试 <code>source ~/.bash_profile</code> 或 <code>source ~/.zshrc</code>，然后重新打开终端。
+  <br /><br />
+  如果都不行，试试重新安装：<code>npm install -g @anthropic-ai/claude-code</code>
+</FAQItem>
+
+<FAQItem question="npm install 一直卡住不动？">
+  1. 检查科学上网是否正常
+  2. 尝试使用国内镜像：<code>npm install -g @anthropic-ai/claude-code --registry https://registry.npmmirror.com</code>
+  3. 如果还不行，等几分钟，可能是网络问题
+</FAQItem>
+
+<FAQItem question="API Key 不小心泄露了怎么办？">
+  立即回到 <a href="https://console.anthropic.com" target="_blank">Anthropic Console</a>，在 API Keys 页面找到对应的 Key，点击 <strong>Delete</strong> 删除。然后创建一个新的。
+</FAQItem>
+
+<FAQItem question="Claude Code 收费贵吗？">
+  Claude Code 用的是 Anthropic API，按使用量付费（token 计费）。轻度使用一天几块钱到十几块钱人民币不等。具体取决于你说了多少话、处理了多少代码。Anthropic 新用户有免费额度，可以先试试再做决定。
+</FAQItem>
+
+<FAQItem question="能不花钱用 Claude Code 吗？">
+  新用户有大约 $5 的免费额度。用完之后需要绑定信用卡充值。如果不方便充信用卡，可以考虑用 Cursor（本网站也有教程），Cursor 有更宽松的免费额度。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 安装 Node.js', href: '/tutorials/claude-code/01-install-nodejs' }}
+  next={{ title: '第一个 AI 编程项目 →', href: '/tutorials/claude-code/03-first-project' }}
+/>

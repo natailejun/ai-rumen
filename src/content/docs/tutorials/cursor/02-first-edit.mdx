@@ -1,0 +1,194 @@
+---
+title: 第一次 AI 编辑 — 体验 Cursor 的核心功能
+description: 用 AI 写代码、改代码、生成完整文件
+sidebar:
+  order: 2
+series: cursor
+seriesOrder: 2
+difficulty: beginner
+estimatedTime: '15 分钟'
+tools:
+  - name: Cursor 已安装并登录
+screenshotCount: 4
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会用 Cursor 的 AI 做：
+
+- ✅ Ctrl+K —— 一句话改代码
+- ✅ Composer —— 一句话生成整个文件/项目
+- ✅ Chat —— 和 AI 讨论你的代码
+
+---
+
+## 功能总览
+
+Cursor 有三种 AI 交互方式：
+
+| 功能 | 快捷键 | 直观理解 |
+|------|--------|---------|
+| **Ctrl+K** | `Ctrl+K` (Win) / `Cmd+K` (Mac) | "帮我改这段"——精准修改选中的代码 |
+| **Composer** | `Ctrl+Shift+I` (Win) / `Cmd+Shift+I` (Mac) | "帮我做一个..."——从零生成文件 |
+| **Chat** | `Ctrl+I` (Win) / `Cmd+I` (Mac) | "帮我分析..."——对话讨论代码 |
+
+---
+
+## 准备：创建一个项目
+
+先创建一个练习用的项目：
+
+1. 打开 Cursor
+2. **File → Open Folder**（打开文件夹）
+3. 随便选一个空文件夹（或新建一个，比如叫 `cursor-practice`）
+
+<Screenshot
+  src="/images/tutorials/cursor/open-folder.png"
+  alt="Cursor 打开文件夹截图"
+  caption="图：创建一个练习用的空文件夹"
+/>
+
+左侧文件浏览器会变成这个文件夹。现在里面是空的。
+
+---
+
+## 功能一：Composer（生成代码）
+
+Composer 是 Cursor 最强大的功能——用一句话生成完整文件。
+
+<Screenshot
+  src="/images/tutorials/cursor/composer-open.png"
+  alt="Composer 界面截图"
+  caption="图：Composer 窗口——输入需求，AI 会生成代码"
+/>
+
+### 实操：用 Composer 创建一个计算器页面
+
+1. 按 **`Ctrl+Shift+I`**（Mac：`Cmd+Shift+I`）
+2. 在 Composer 输入框中输入：
+
+```
+创建一个网页计算器。
+要求：
+- 单个 index.html 文件，包含 HTML + CSS + JS
+- 支持加减乘除
+- 界面简洁美观，用蓝色主题
+- 按钮大且方便点击（适配手机）
+```
+
+3. 点击 **Submit**（发送）
+4. Cursor 会生成代码，在右侧预览窗口中你会看到结果
+5. 点击 **Accept All**（接受全部）→ 代码会写入文件
+
+<Screenshot
+  src="/images/tutorials/cursor/composer-result.png"
+  alt="Composer 生成结果截图"
+  caption="图：AI 生成的计算器代码——点击 Accept All 保存"
+/>
+
+6. 保存文件：**File → Save**（或 `Ctrl+S`）
+7. 在文件浏览器中双击 `index.html` → 浏览器打开 → 看到你的计算器！
+
+> 🎉 恭喜！你又用一个需求描述生成了一个完整应用。
+
+---
+
+## 功能二：Ctrl+K（行内编辑）
+
+Ctrl+K 让你**修改已有的代码**，而不是生成新文件。
+
+<Screenshot
+  src="/images/tutorials/cursor/ctrl-k-example.png"
+  alt="Ctrl+K 编辑界面截图"
+  caption="图：选中代码 → Ctrl+K → 输入修改需求 → 查看差异 → 接受"
+/>
+
+### 实操：修改计算器
+
+1. 打开刚才的 `index.html`
+2. 选中计算器按钮的 CSS 样式代码
+3. 按 **`Ctrl+K`**（Mac：`Cmd+K`）
+4. 输入框出现 → 输入：
+
+```
+把按钮颜色改成深紫色，圆角加大到 12px，加一个悬停效果
+```
+
+5. 回车 → AI 生成修改
+6. 右侧显示**差异对比**（左边是原来的，右边是修改后的）
+7. 满意 → 按 **`Ctrl+Y`**（接受）
+8. 不满意 → 按 **`Ctrl+N`**（拒绝），然后重新描述
+
+> 💡 Ctrl+K 的精髓：**选中 → 描述 → 接受/拒绝**，三步就完成修改。
+
+---
+
+## 功能三：Chat（对话式）
+
+Chat 让你和 AI 像对话一样讨论代码。
+
+<Screenshot
+  src="/images/tutorials/cursor/chat-example.png"
+  alt="Chat 面板截图"
+  caption="图：Cursor Chat——可以和 AI 讨论代码问题"
+/>
+
+### 实操：和 AI 讨论你的代码
+
+1. 按 **`Ctrl+I`**（Mac：`Cmd+I`）
+2. 打开 Chat 面板后，你可以问：
+
+```
+解释一下 index.html 的结构，我是新手。
+```
+
+```
+这段 CSS 有没有可以优化的地方？
+```
+
+```
+给这个计算器加一个百分比计算功能，告诉我怎么改。
+```
+
+Chat 会详细回答，有时候还会自动应用建议到你的代码中。
+
+---
+
+## 三大 AI 功能对比
+
+| 场景 | 用什么 | 原因 |
+|------|--------|------|
+| 从零创建新文件 | **Composer** | 一次生成完整文件 |
+| 修改某段代码 | **Ctrl+K** | 精准修改选中部分 |
+| 分析代码/问问题 | **Chat** | 对话式更自然 |
+| 在多个文件间改 | **Composer** | 可以跨文件操作 |
+| 改个变量名/颜色 | **Ctrl+K** | 小改动最快 |
+
+---
+
+## 常见问题
+
+<FAQItem question="AI 生成的代码有 bug 怎么办？">
+  直接告诉 AI："你这代码有问题，运行时报错 [贴报错信息]，帮我修复"。或者用 Chat 功能描述问题，AI 会分析并修复。
+</FAQItem>
+
+<FAQItem question="能撤销 AI 的修改吗？">
+  能。按 `Ctrl+Z`（Mac：`Cmd+Z`）可以撤销，和普通编辑器一样。建议大改之前先 `Ctrl+S` 保存一次当前状态。
+</FAQItem>
+
+<FAQItem question="AI 改的效果不满意？">
+  按 `Ctrl+N` 拒绝修改，然后换一种描述方式重新说一遍。有时候换个说法效果会完全不同。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 下载与安装 Cursor', href: '/tutorials/cursor/01-download-install' }}
+  next={{ title: 'Chat 与 Composer 深入 →', href: '/tutorials/cursor/03-chat-composer' }}
+/>

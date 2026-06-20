@@ -1,0 +1,172 @@
+---
+title: 下载与安装 Cursor IDE
+description: 下载 Cursor 安装包、完成首次配置、从 VS Code 迁移设置
+sidebar:
+  order: 1
+  badge:
+    text: 第一步
+    variant: success
+series: cursor
+seriesOrder: 1
+difficulty: beginner
+estimatedTime: '8 分钟'
+tools:
+  - name: 一台电脑（Windows/Mac/Linux）
+  - name: 网络连接
+screenshotCount: 5
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会：
+
+- ✅ 下载并安装 Cursor
+- ✅ 完成首次启动配置
+- ✅ （可选）从 VS Code 迁移设置
+
+---
+
+## 什么是 Cursor？30 秒版
+
+Cursor 是 **VS Code 的 AI 增强版**。它长得和 VS Code 几乎一样，不同的是：
+
+- 🤖 内置了 AI 助手（不需要安装插件）
+- 💬 可以跟 AI 对话讨论代码
+- ✨ 按 `Ctrl+K` 就能让 AI 帮你改代码
+- 🧩 一个命令就能生成整个功能模块
+
+> 💡 如果你用过 VS Code：装完直接用，所有操作习惯都保留。  
+> 💡 如果你没用过 VS Code：没关系，当它是一个"会帮写代码的编辑器"就行。
+
+---
+
+## 下载 Cursor
+
+1. 打开浏览器
+2. 访问 **[cursor.com](https://cursor.com)**
+3. 首页会有一个大大的 **Download** 按钮
+
+<Screenshot
+  src="/images/tutorials/cursor/download-page.png"
+  alt="Cursor 官网下载页面截图"
+  caption="图：cursor.com 首页，点击 Download 下载对应系统的版本"
+/>
+
+网站会自动检测你的操作系统，给你对应的版本：
+- **Windows** → 下载 `.exe` 安装包
+- **Mac** → 下载 `.dmg` 安装包
+- **Linux** → 下载 `.AppImage`
+
+---
+
+## Windows 安装
+
+1. 双击下载的 `Cursor-Setup-xxx.exe` 文件
+2. 安装程序会自动进行，等待进度条走完
+3. 安装完成后 Cursor 会自动打开
+
+<Screenshot
+  src="/images/tutorials/cursor/windows-install.png"
+  alt="Windows 安装过程截图"
+  caption="图：Windows 安装过程——等待自动完成即可"
+/>
+
+---
+
+## Mac 安装
+
+1. 双击下载的 `Cursor-xxx.dmg` 文件
+2. 在弹出窗口中，把 Cursor 图标**拖到 Applications 文件夹**
+3. 在 Applications 中找到 Cursor，双击打开
+4. 如果提示"无法验证开发者"：打开系统设置 → 安全性与隐私 → 点击"仍要打开"
+
+<Screenshot
+  src="/images/tutorials/cursor/mac-install.png"
+  alt="Mac 安装截图"
+  caption="图：Mac 安装——拖动 Cursor 到 Applications"
+/>
+
+---
+
+## 首次启动配置
+
+第一次打开 Cursor 会有一个欢迎向导：
+
+<Screenshot
+  src="/images/tutorials/cursor/welcome-screen.png"
+  alt="Cursor 欢迎页面截图"
+  caption="图：首次启动的欢迎界面"
+/>
+
+### 1. 选择主题
+
+选择 **Dark（暗色）** 或 **Light（亮色）**。随时可以在设置中改。
+
+### 2. 导入 VS Code 设置（可选）
+
+如果你电脑上已经装了 VS Code，Cursor 会问你是否导入：
+
+| 导入内容 | 说明 |
+|---------|------|
+| 扩展（Extensions） | 你装的 VS Code 插件 |
+| 设置（Settings） | 字体大小、快捷键等 |
+| 快捷键（Keybindings） | 自定义快捷键 |
+
+> 💡 建议全部导入。这样你的 Cursor 体验和 VS Code 完全一致。
+
+### 3. 注册/登录
+
+<Screenshot
+  src="/images/tutorials/cursor/login-screen.png"
+  alt="Cursor 登录页面截图"
+  caption="图：用 GitHub 或 Google 账号登录"
+/>
+
+Cursor 的免费版需要注册登录才能使用 AI 功能。推荐用 **GitHub** 账号登录（如果有的话），或者用 Google / 邮箱注册。
+
+---
+
+## 免费版 vs Pro 版
+
+| 功能 | 免费版 | Pro 版 ($20/月) |
+|------|:---:|:---:|
+| AI Chat（对话） | ✅ 有限次 | ✅ 无限次 |
+| Ctrl+K（行内编辑） | ✅ 有限次 | ✅ 无限次 |
+| Composer（多文件） | ✅ 有限次 | ✅ 无限次 |
+| VS Code 扩展 | ✅ | ✅ |
+| 自定义模型 | ❌ | ✅ |
+| Privacy Mode | ❌ | ✅ |
+
+> 💡 **建议**：先用免费版，每天大概能用几十次 AI 操作。觉得不够用了再升级。
+
+---
+
+## 常见问题
+
+<FAQItem question="Cursor 和 VS Code 能同时装吗？">
+  能。它们是两个独立的软件，互不影响。你甚至可以同时打开使用。
+</FAQItem>
+
+<FAQItem question="Cursor 是国产软件吗？">
+  不是。Cursor 是美国公司（Anysphere）开发的。但界面完美支持中文，使用体验没有障碍。
+</FAQItem>
+
+<FAQItem question="需要科学上网吗？">
+  Cursor 官网不需要科学上网就能下载。但 AI 功能需要科学上网（因为 AI 服务在国外）。如果暂时不方便，可以考虑用国产 AI 编程工具如通义灵码。
+</FAQItem>
+
+<FAQItem question="Cursor 和 VS Code 选哪个？">
+  如果你不需要 AI 功能，VS Code 完全够用。但如果想让 AI 帮你写代码，Cursor 是目前体验最好的选择——没有之一。
+</FAQItem>
+
+---
+
+<NextSteps
+  next={{ title: '第一次 AI 编辑 →', href: '/tutorials/cursor/02-first-edit' }}
+/>

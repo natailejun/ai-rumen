@@ -1,0 +1,63 @@
+---
+title: DeepSeek API 使用指南
+description: 获取 API Key，在你的程序中使用 DeepSeek
+sidebar:
+  order: 2
+series: deepseek
+seriesOrder: 2
+difficulty: intermediate
+estimatedTime: '10 分钟'
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+
+## 本教程目标
+
+获取 DeepSeek API Key，用代码调用 DeepSeek。
+
+---
+
+## 获取 API Key
+
+1. 访问 [**platform.deepseek.com**](https://platform.deepseek.com)
+2. 登录后在左侧找到 **API Keys**
+3. 点击 **创建 API Key**
+4. 复制保存
+
+<WarningCallout title="提醒">
+  API Key 不要分享给他人，也不要上传到公开仓库。
+</WarningCallout>
+
+---
+
+## Python 调用示例
+
+```python
+import requests
+
+response = requests.post(
+    "https://api.deepseek.com/v1/chat/completions",
+    headers={"Authorization": "Bearer 你的API_Key"},
+    json={
+        "model": "deepseek-chat",
+        "messages": [{"role": "user", "content": "你好"}]
+    }
+)
+print(response.json())
+```
+
+---
+
+## 费用
+
+DeepSeek API **非常便宜**，比 ChatGPT API 便宜 90% 以上。
+
+---
+
+<NextSteps
+  prev={{ title: '← 注册 DeepSeek', href: '/tutorials/deepseek/01-register' }}
+  next={{ title: 'DeepSeek 进阶技巧 →', href: '/tutorials/deepseek/03-advanced' }}
+/>

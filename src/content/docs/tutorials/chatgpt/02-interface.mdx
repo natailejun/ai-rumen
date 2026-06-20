@@ -1,0 +1,223 @@
+---
+title: ChatGPT 界面介绍
+description: 认识 ChatGPT 的每个功能区和按钮，快速上手操作
+sidebar:
+  order: 2
+series: chatgpt
+seriesOrder: 2
+difficulty: beginner
+estimatedTime: '8 分钟'
+tools:
+  - name: ChatGPT 账号（已完成注册）
+screenshotCount: 6
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会知道：
+
+- ChatGPT 界面上每个按钮是干什么的
+- 怎么创建新对话、查找历史对话
+- 怎么切换模型、管理设置
+- 什么是 GPTs，在哪里找到
+
+---
+
+## ChatGPT 主界面概览
+
+登录 [chatgpt.com](https://chatgpt.com) 后，你会看到这样的界面：
+
+<Screenshot
+  src="/images/tutorials/chatgpt/interface-overview.png"
+  alt="ChatGPT 主界面各区域标注截图"
+  caption="图：ChatGPT 主界面 —— 左侧是对话列表和菜单，右侧是对话区域"
+/>
+
+整个界面分为 **三个主要区域**：
+
+| 区域 | 位置 | 功能 |
+|------|------|------|
+| ① 侧边栏 | 左侧 | 对话历史、GPTs 入口、设置 |
+| ② 对话区 | 中间 | 你和 ChatGPT 的对话内容 |
+| ③ 输入框 | 底部 | 输入你的问题 |
+
+---
+
+## 区域一：侧边栏详解
+
+<Screenshot
+  src="/images/tutorials/chatgpt/sidebar-detail.png"
+  alt="侧边栏详细截图"
+  caption="图：侧边栏各按钮说明"
+/>
+
+侧边栏从上到下：
+
+### 🔘 新建对话按钮（最重要）
+
+侧边栏顶部的 **"+ New chat"** 或 **铅笔图标**，点击可以开始一个全新的对话。
+
+> 💡 **什么时候新建对话？** 当你从一个话题切换到完全不同的新话题时，建议新建对话。AI 在同一个对话中会"记住"前面说过的话，换个话题可能受到影响。
+
+### 📋 对话历史
+
+你所有的历史对话都列在这里。最近的在最上面。
+
+- **点击**某个对话 → 打开继续聊天
+- **悬停**在某对话上 → 可以看到重命名、删除等选项
+- **搜索**功能：列表上方的搜索框可以找到以前的对话
+
+### 🧭 GPTs 入口
+
+点击侧边栏的 **"Explore GPTs"**（浏览 GPTs），你会进入 GPTs 商店。GPTs 是别人做好的专用 AI 助手，比如：
+- DALL·E（图片生成）
+- Data Analyst（数据分析）
+- Writing Coach（写作教练）
+
+### ⚙️ 设置入口
+
+侧边栏最底部，点击你的**头像/用户名**，弹出菜单：
+
+| 选项 | 功能 |
+|------|------|
+| ChatGPT Plus / Upgrade | 升级到付费版 |
+| Settings | 设置（后面详细讲） |
+| Customize ChatGPT | 自定义 AI 行为 |
+| Log out | 退出登录 |
+
+---
+
+## 区域二：对话区
+
+<Screenshot
+  src="/images/tutorials/chatgpt/conversation-area.png"
+  alt="对话区截图"
+  caption="图：对话区域——你的问题和 AI 的回答都在这里显示"
+/>
+
+对话区是 ChatGPT 最核心的部分：
+
+### 你的消息（绿色/深色气泡）
+你发的每条消息都会显示为一个独立的气泡。
+
+### ChatGPT 的回复（浅色/白色区域）
+AI 的回复会逐字"打字"出来（流式输出），你可以边看边等。
+
+### 每条回复下方的按钮
+
+每条 ChatGPT 回复下方都有一排小按钮：
+
+| 按钮 | 图标 | 功能 |
+|------|------|------|
+| **复制** | 📋 | 一键复制整段回答 |
+| **重新生成** | 🔄 | 对同一个问题让 AI 换一种回答 |
+| **点赞/踩** | 👍👎 | 给反馈帮助改进 AI |
+| **朗读** | 🔊 | 语音朗读回答内容 |
+
+---
+
+## 区域三：输入框
+
+<Screenshot
+  src="/images/tutorials/chatgpt/input-area.png"
+  alt="输入框区域截图"
+  caption="图：底部的输入框是你和 ChatGPT 沟通的地方"
+/>
+
+输入框是**你用得最多**的地方。从上到下：
+
+### 🔧 附件按钮
+
+| 按钮 | 图标 | 功能 |
+|------|------|------|
+| **深度研究** | 🔬 | 进行更深入的搜索分析（Plus 用户） |
+| **搜索网络** | 🌐 | 开启联网搜索模式 |
+| **附件上传** | 📎 | 上传图片、PDF、Word 等文件让 AI 分析 |
+| **更多** | ··· | 连接到其他 App 数据源 |
+
+### ✍️ 消息输入框
+
+在这里输入你想说的话。支持**多行输入**（按 Shift+Enter 换行）。
+
+> 💡 **提示**：你可以直接粘贴大段文字让 ChatGPT 帮你处理。
+
+### 📤 发送按钮
+
+输入完成后，点击纸飞机图标或直接按 **Enter 键**发送。
+
+---
+
+## 设置页面详解
+
+点击侧边栏 → 你的头像 → **Settings**（设置），进入设置页面：
+
+<Screenshot
+  src="/images/tutorials/chatgpt/settings-page.png"
+  alt="设置页面截图"
+  caption="图：ChatGPT 设置页面"
+/>
+
+### 常用设置项
+
+| 设置项 | 位置 | 建议 |
+|--------|------|------|
+| **主题切换** | General → Theme | 可选 Light/Dark/System |
+| **语言** | General → Language | 默认 Auto-detect 就好 |
+| **数据控制** | Data controls | ⚠️ 重要！关闭"Improve the model for everyone"可以保护隐私 |
+| **导出数据** | Data controls → Export data | 可以导出你所有的对话记录 |
+| **删除账号** | Data controls → Delete account | 永久删除你的 ChatGPT 账号和数据 |
+| **自定义指令** | Customize ChatGPT | 高级功能，后续教程讲 |
+
+<WarningCallout title="隐私建议" type="tip">
+  建议在 <strong>Data controls</strong> 中关闭 <strong>"Improve the model for everyone"</strong>。
+  这样你输入的内容不会被用来训练 AI，保护隐私。
+</WarningCallout>
+
+---
+
+## 模型选择器
+
+在输入框的左上角，你会看到当前使用的模型名称（通常是 **GPT-4o** 或 **GPT-4o mini**）。
+
+<Screenshot
+  src="/images/tutorials/chatgpt/model-selector.png"
+  alt="模型选择下拉菜单截图"
+  caption="图：点击模型名称可以切换不同的 AI 模型"
+/>
+
+| 模型 | 特点 | 适用场景 |
+|------|------|---------|
+| **GPT-4o** | 最新、最强 | 复杂问题、重要任务 |
+| **GPT-4o mini** | 速度快、免费额度更多 | 日常简单问题 |
+| **o3-mini** | 推理型、数学逻辑强 | 数学、编程、逻辑问题 |
+
+> 💡 **免费版用户**：GPT-4o 有使用次数限制，用完后自动切换到 GPT-4o mini。
+
+---
+
+## 常见问题
+
+<FAQItem question="对话和对话之间是独立的吗？">
+  是的。每个对话是独立的会话。ChatGPT 在一个对话中记得你们之前说了什么，但它不会"跨对话"记住你。如果你想换一个全新话题，建议新建对话。
+</FAQItem>
+
+<FAQItem question="怎么删除对话历史？">
+  在侧边栏悬停在某条对话上，点击删除图标（通常是垃圾桶）。要批量删除，在 Settings → Data controls 中可以选择"Delete all chats"。
+</FAQItem>
+
+<FAQItem question="ChatGPT 支持中文吗？">
+  完全支持。你可以直接用中文和它交流。它的中文水平非常好，无论是日常聊天还是专业写作都很流畅。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 注册 ChatGPT 账号', href: '/tutorials/chatgpt/01-register' }}
+  next={{ title: '第一次对话：学会提问 →', href: '/tutorials/chatgpt/03-first-prompt' }}
+/>

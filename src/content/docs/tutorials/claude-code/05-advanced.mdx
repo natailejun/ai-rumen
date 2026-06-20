@@ -1,0 +1,257 @@
+---
+title: Claude Code 高级功能与进阶技巧
+description: 自定义配置、MCP 工具扩展、批量任务处理、IDE 集成
+sidebar:
+  order: 5
+series: claude-code
+seriesOrder: 5
+difficulty: advanced
+estimatedTime: '15 分钟'
+tools:
+  - name: Claude Code 已熟练使用
+  - name: 有一定编程基础
+screenshotCount: 3
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会了解：
+
+- ✅ 自定义配置文件（CLAUDE.md）的写法
+- ✅ MCP 工具扩展——连接外部数据源
+- ✅ 批量任务与自动化
+- ✅ 和 VS Code 等编辑器配合使用
+
+> ⚠️ 这篇属于进阶内容。如果你是零基础，前 4 篇的内容已经足够日常使用了。
+
+---
+
+## CLAUDE.md —— 项目级的自定义指令
+
+CLAUDE.md 就像 ChatGPT 的"自定义指令"，但它是为 Claude Code 设计的。
+
+### 创建 CLAUDE.md
+
+在项目根目录创建一个 `CLAUDE.md` 文件：
+
+```markdown
+# 项目说明
+
+- 这是一个个人博客项目
+- 使用 HTML + CSS + 原生 JS，不用框架
+- 所有文字用简体中文
+- CSS 变量定义在 style.css 的最前面
+- 保持代码注释详细
+
+## 编码风格
+
+- 缩进用 2 个空格
+- 变量命名用驼峰法
+- CSS 类名用 kebab-case
+- 不使用 !important
+```
+
+Claude Code 在启动时会**自动读取这个文件**，并按你的偏好工作。
+
+### CLAUDE.md 可以写什么？
+
+| 内容 | 示例 |
+|------|------|
+| **项目描述** | "这是一个电商前端项目" |
+| **技术栈** | "使用 React 18 + TypeScript" |
+| **编码规范** | "函数命名用驼峰法" |
+| **文件结构** | "组件放在 components/ 下" |
+| **常用命令** | "npm run dev 启动开发服务器" |
+| **注意事项** | "不要改 tailwind.config.js" |
+
+> 💡 **实用技巧**：在 CLAUDE.md 中写明"不要做"的事情，往往比"要做"的事情更有用。
+
+---
+
+## MCP 工具扩展
+
+**MCP**（Model Context Protocol）允许 Claude Code 连接外部数据源和工具。
+
+### 什么是 MCP？
+
+简单来说，MCP 就像给 Claude Code "装插件"：
+- 📁 连接数据库（查询数据、改表结构）
+- 🌐 调用外部 API（天气、新闻、支付等）
+- 📄 读写特定格式的文件
+- 🔧 集成其他开发工具
+
+### MCP 配置示例
+
+在项目根目录创建 `.claude/mcp.json`：
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-filesystem", "."]
+    }
+  }
+}
+```
+
+> 💡 MCP 的具体配置取决于你要连接什么服务。Anthropic 官方和社区提供了很多现成的 MCP 服务器（filesystem、GitHub、Slack 等）。
+
+---
+
+## 批量任务与自动化
+
+Claude Code 也可以做批量操作：
+
+### 示例 1：批量重命名文件
+
+```
+"把 src 文件夹下所有 .jsx 文件重命名为 .tsx"
+```
+
+### 示例 2：批量替换内容
+
+```
+"在所有 HTML 文件中，把 class='old-style' 替换成 class='new-style'"
+```
+
+### 示例 3：批量生成文件
+
+```
+"根据 data.json 里的数据，为每个人的信息生成一个 HTML 文件放在 profiles/ 文件夹下"
+```
+
+### 示例 4：代码迁移
+
+```
+"把 styles.css 中所有的颜色值提取到 CSS 变量中，放在 :root 块里"
+```
+
+---
+
+## 与 VS Code 配合使用
+
+Claude Code 是命令行工具，VS Code 是图形编辑器——两者可以配合使用：
+
+<Screenshot
+  src="/images/tutorials/claude-code/vscode-integration.png"
+  alt="VS Code 和终端配合使用截图"
+  caption="图：左边 VS Code 编辑代码，右边终端用 Claude Code"
+/>
+
+### 最佳实践
+
+| 场景 | 用什么 |
+|------|--------|
+| 创建新文件/新功能 | Claude Code 生成 |
+| 检查 AI 写的代码 | VS Code 查看 |
+| 微调样式/颜色 | VS Code 手动改 |
+| 大范围重构 | Claude Code 改 |
+| 改 bug | Claude Code 定位 + VS Code 确认 |
+| Git 操作 | Claude Code 更快捷 |
+
+### 工作流建议
+
+1. 打开 VS Code 查看项目
+2. 打开终端（VS Code 内置终端即可，Ctrl+` ）
+3. 在终端中 `cd` 到项目目录，启动 `claude`
+4. 用 Claude Code 生成/修改代码
+5. 在 VS Code 中审查结果
+6. 微调用 VS Code，大改回到 Claude Code
+
+> 💡 VS Code 内置终端非常好用——避免在两个窗口间来回切换。
+
+---
+
+## 高级提示词策略
+
+### 分阶段开发策略
+
+不要一口气让 Claude Code 做一整个大项目。分阶段：
+
+```
+第一阶段："帮我创建项目基础结构，一个 index.html 和一个 style.css"
+第二阶段："在 index.html 中添加导航栏"
+第三阶段："让导航栏在手机上变成汉堡菜单"
+第四阶段："添加页面切换动画"
+...
+```
+
+**好处**：
+- 每一步都可以检查和调整
+- 中途改方向更容易
+- 每个小步骤花费更少
+- 更容易定位 bug
+
+### 说到做到 vs 先问再说
+
+Claude Code 默认会直接执行，不啰嗦。但你也可以：
+
+```
+"先告诉我你打算怎么做，列出步骤，不要直接改文件"
+```
+
+→ 先讨论方案
+
+```
+"直接做，不用确认"
+```
+
+→ 直接执行
+
+---
+
+## 权限与安全
+
+### Claude Code 的权限模式
+
+Claude Code 在做敏感操作时会询问你：
+
+| 操作 | 是否询问 |
+|------|:---:|
+| 读取文件 | ❓ 取决于设置 |
+| 创建文件 | ❓ 取决于设置 |
+| 运行命令 | ✅ 通常需要确认 |
+| 删除文件 | ✅ 通常需要确认 |
+| 网络请求 | ✅ 通常需要确认 |
+
+### 用 `/permissions` 管理权限
+
+可以在 Claude Code 中设置权限级别：
+
+```
+/permissions    # 查看当前权限设置
+```
+
+---
+
+## 常见问题
+
+<FAQItem question="Claude Code 能替代 VS Code / Cursor 吗？">
+  不能完全替代。Claude Code 擅长生成和修改代码，但缺少图形化的代码编辑体验。建议 Claude Code + VS Code 配合使用。
+</FAQItem>
+
+<FAQItem question="CLAUDE.md 和 .claude/settings.json 有什么区别？">
+  CLAUDE.md 是项目级指令（告诉 AI 怎么工作），.claude/settings.json 是工具配置（权限、MCP 等）。前者面向 AI，后者面向工具本身。
+</FAQItem>
+
+<FAQItem question="MCP 必须配置吗？">
+  不需要。MCP 是进阶功能，日常使用完全用不到。当你需要连接数据库或外部 API 时再配置。
+</FAQItem>
+
+<FAQItem question="Claude Code 和 Cursor 的数据安全对比？">
+  两者都会把你的代码发送到云端 AI 处理。如果对数据安全有极高要求（如公司核心代码），建议使用本地模型（如 Ollama + 开源模型）。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 日常使用工作流', href: '/tutorials/claude-code/04-workflow' }}
+  next={{ title: 'Cursor 系列教程 →', href: '/tutorials/cursor/' }}
+/>

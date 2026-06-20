@@ -1,0 +1,20 @@
+---
+export interface StepLink {
+  title: string;
+  href: string;
+}
+export interface Props {
+  prev?: StepLink;
+  next?: StepLink;
+}
+const { prev, next } = Astro.props;
+---
+
+<div class="next-steps">
+  {prev ? (
+    <a href={prev.href} class="prev">{prev.title}</a>
+  ) : <div></div>}
+  {next ? (
+    <a href={next.href} class="next">{next.title}</a>
+  ) : <div></div>}
+</div>

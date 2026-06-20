@@ -1,49 +1,31 @@
-# Starlight Starter Kit: Basics
+# AI 入门指南
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+手把手教你用好 AI 工具，从零开始消除技术焦虑。
 
-```
-npm create astro@latest -- --template starlight
-```
+**技术栈：** Astro 6 + Starlight ~0.40
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 本地开发
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+```bash
+npm install          # 安装依赖
+npm run dev          # 开发服务器 → http://localhost:4321
+npm run build        # 生产构建 → dist/
+npm run preview      # 本地预览生产版本
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## 项目结构
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+```
+src/
+├── pages/index.astro         # 独立首页（非 Starlight 文档页）
+├── content/docs/tutorials/    # 教程内容（MDX）
+├── components/                # 自定义 Astro 组件
+├── styles/custom.css          # 全局样式（设计 tokens、玻璃拟态、动画）
+└── assets/                    # 图片、logo 等静态资源
+```
 
-Static assets, like favicons, can be placed in the `public/` directory.
+教程内容覆盖：ChatGPT、Claude Code、Cursor、DeepSeek、Kimi、快速入门。
 
-## 🧞 Commands
+## 部署
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+网站部署在 Cloudflare Pages：https://ai-rumen.pages.dev

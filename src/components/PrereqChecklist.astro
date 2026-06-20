@@ -1,0 +1,21 @@
+---
+export interface Tool {
+  name: string;
+  url?: string;
+}
+export interface Props {
+  items: Tool[];
+}
+const { items } = Astro.props;
+---
+
+<div class="prereq-checklist">
+  <h4>📋 准备工作</h4>
+  <ul>
+    {items.map((item) => (
+      <li>
+        {item.url ? <a href={item.url} target="_blank" rel="noopener">{item.name}</a> : item.name}
+      </li>
+    ))}
+  </ul>
+</div>

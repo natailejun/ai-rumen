@@ -1,0 +1,14 @@
+---
+export interface Props {
+  title?: string;
+  type?: 'warning' | 'danger' | 'tip';
+}
+const { title, type = 'warning' } = Astro.props;
+---
+
+<div class={`warning-callout ${type}`}>
+  {title && <div class="warning-title">{type === 'danger' ? '⚠️ ' : type === 'tip' ? '💡 ' : '⚠️ '}{title}</div>}
+  <div>
+    <slot />
+  </div>
+</div>

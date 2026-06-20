@@ -1,0 +1,256 @@
+---
+title: Claude Code 日常使用工作流
+description: 高效使用 Claude Code 的完整工作流程、实用技巧和成本控制
+sidebar:
+  order: 4
+series: claude-code
+seriesOrder: 4
+difficulty: intermediate
+estimatedTime: '12 分钟'
+tools:
+  - name: Claude Code 已安装配置
+  - name: 完成第一个项目
+screenshotCount: 3
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会掌握：
+
+- ✅ Claude Code 的日常工作循环
+- ✅ 文件操作：创建、修改、删除、查找
+- ✅ 与 Git 配合使用
+- ✅ 控制成本的小技巧
+
+---
+
+## 核心工作流：观察 → 描述 → 审查 → 迭代
+
+```
+┌─────────────────────────────────────────┐
+│          Claude Code 工作循环             │
+│                                           │
+│   🔍 观察现状 → 💬 描述需求 → 📋 审查改动   │
+│        ↑                              ↓   │
+│        └──── 🔄 提修改意见 ←──────────┘   │
+└─────────────────────────────────────────┘
+```
+
+### 每一步具体做什么
+
+**第 1 步：观察现状**
+- 看当前项目有什么文件
+- 看代码哪里需要改、需要加
+
+**第 2 步：描述需求**
+- 用中文明确说你要什么
+- 越具体越好：文件名、功能、效果
+
+**第 3 步：审查改动**
+- 看 Claude Code 改了什么
+- 用 `/diff` 查看具体改动
+- 确认符合预期
+
+**第 4 步：提修改意见**
+- "这个颜色不对"、"再加一个功能"
+- 循环直到满意
+
+---
+
+## 最常用的 Claude Code 命令
+
+### 基础对话命令
+
+| 命令 | 作用 | 示例 |
+|------|------|------|
+| 直接说需求 | 写代码/创建文件 | "创建一个登录页面" |
+| "解释这段代码" | 读懂代码 | "解释一下 app.js 在做什么" |
+| "修复这个 bug" | 改 bug | "修复第 23 行的报错" |
+| "重构" | 优化代码结构 | "重构 index.html，把 CSS 抽到单独文件" |
+
+### 内置斜杠命令
+
+在 Claude Code 中输入 `/` 开头的命令：
+
+| 命令 | 作用 |
+|------|------|
+| `/help` | 查看帮助 |
+| `/clear` | 清空当前对话（重新开始） |
+| `/exit` | 退出 Claude Code |
+| `/diff` | 查看当前修改了什么 |
+| `/compact` | 压缩对话历史（省钱） |
+| `/cost` | 查看当前会话花费 |
+| `/doctor` | 诊断配置问题 |
+| `/approved-tools` | 查看允许的工具 |
+
+---
+
+## 实用场景与操作方式
+
+### 场景一：创建新项目
+
+```
+步骤：
+1. mkdir my-project && cd my-project    # 创建并进入文件夹
+2. claude                                 # 启动 Claude Code
+3. "帮我创建一个 XXX 项目，使用 HTML/CSS/JS，功能包括……"
+```
+
+### 场景二：修改现有代码
+
+```
+直接在 Claude Code 中说：
+"打开 index.html，把导航栏的背景色从蓝色改成深灰色"
+"在 script.js 的 login 函数里加一个输入验证"
+```
+
+### 场景三：读懂别人的代码
+
+```
+"把这个项目里的代码解释给我听，我是新手"
+"app.js 第 45-68 行在做什么？"
+```
+
+### 场景四：让 AI 帮你做 Git 操作
+
+<WarningCallout title="小心" type="warning">
+  AI 做 Git 操作很方便，但操作前最好确认一下。养成先用 /diff 审查的习惯。
+</WarningCallout>
+
+```
+"git add . 然后 git commit -m '添加简历网页'"
+"创建一个 .gitignore 文件，忽略 node_modules 和 .env"
+"帮我看看 git log 最近的 3 条记录"
+```
+
+---
+
+## 文件操作全攻略
+
+### 创建文件
+```
+"创建一个 style.css 文件，写全局样式"
+"创建 src 文件夹，然后在里面创建 main.js"
+```
+
+### 修改文件
+```
+"在 index.html 的 <head> 里引入 style.css"
+"把 script.js 里所有的 var 改成 const"
+"删除 contact.html 的第 15 行到 20 行"
+```
+
+### 删除文件
+```
+"删除 temp.txt"
+"删除 backup 文件夹及其所有内容"
+```
+
+### 查找内容
+```
+"搜索项目里所有用到 fetch 的地方"
+"在 app.js 里找一下 handleClick 函数在哪定义"
+```
+
+---
+
+## 与 Git 配合使用
+
+如果你用 Git 管理项目（强烈推荐），Claude Code 可以帮你：
+
+```bash
+# 启动 Claude Code 前先初始化 Git
+git init
+echo "node_modules/\n.env" > .gitignore
+git add .
+git commit -m "初始提交"
+
+# 然后启动 Claude Code
+claude
+```
+
+在 Claude Code 中：
+
+```
+"帮我把这次的改动 git add 然后 commit，提交信息写'添加导航栏'"
+"git status 看一下有什么改动"
+"撤销对 index.html 的修改"
+```
+
+> 💡 **建议**：每次让 Claude Code 大改之前，先 `git commit` 保存当前状态。这样改坏了随时可以回退。
+
+---
+
+## 成本控制技巧
+
+<WarningCallout title="省钱建议" type="tip">
+  Claude Code 按使用量收费。以下是省钱的实用建议：
+</WarningCallout>
+
+### 省钱小贴士
+
+| 技巧 | 为什么有用 |
+|------|-----------|
+| **需求说清楚，减少返工** | 一次描述清楚需求比反复改 5 次要省钱得多 |
+| **小任务用一个小对话** | 对话越长越贵。做完一件事就退出，新任务开启新对话 |
+| **用 `/compact` 命令** | 当对话很长时，压缩历史可以降低后续费用 |
+| **用 `/cost` 查看** | 时不时查看当前花费，保持对费用的感知 |
+| **不要一直开着对话** | 如果有事离开 10 分钟，先退出。开着也可能会消耗 token |
+| **预览后再让 AI 调** | 先生成一版预览，把想法理清楚再让 AI 一次性改 |
+
+### Claude Code vs Cursor：选哪个更省钱？
+
+| 对比维度 | Claude Code | Cursor |
+|---------|:----------:|:------:|
+| 付费方式 | 按 token 量付费 | 固定月费 $20/月 |
+| 轻度使用 | 更便宜（几块钱/天） | 固定费用 |
+| 重度使用 | 更贵 | 不限量 |
+| 适合谁 | 偶尔写代码 | 每天写代码 |
+
+> 💡 如果你只是偶尔用 AI 编程，Claude Code 按量付费更实惠。如果每天都要写，Cursor 的固定月费可能更划算。
+
+---
+
+## Claude Code 小抄（快捷键和命令速查）
+
+| 操作 | 怎么做 |
+|------|--------|
+| 启动 Claude Code | `claude` |
+| 退出 | `/exit` 或 `Ctrl+C` |
+| 查看帮助 | `/help` |
+| 查看改动 | `/diff` |
+| 查看花费 | `/cost` |
+| 压缩对话 | `/compact` |
+| 清空对话 | `/clear` |
+| 输入多行 | `Shift+Enter` 换行 |
+| 粘贴代码 | `Ctrl+V`（Windows）或 `Cmd+V`（Mac） |
+| 中文输入 | 直接输入中文 |
+
+---
+
+## 常见问题
+
+<FAQItem question="Claude Code 能处理多大规模的项目？">
+  中小型项目没问题。对于几万行代码的项目，Claude Code 也能处理但会更贵。大型项目建议配合 Cursor 或 VS Code 使用。
+</FAQItem>
+
+<FAQItem question="我该先学 Claude Code 还是 Cursor？">
+  如果你想快速上手用 AI 编程，Cursor 更友好（图形界面）。如果你想深入理解命令行和控制力，Claude Code 更灵活。两者不是互斥的，很多人两个都用。
+</FAQItem>
+
+<FAQItem question="Claude Code 能写 Python 吗？能写 Java 吗？">
+  能，什么语言都能写。HTML/CSS/JS/Python/Java/Go/Rust/... Claude Code 不挑语言，你只需要告诉它你想用什么语言。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 第一个 AI 编程项目', href: '/tutorials/claude-code/03-first-project' }}
+  next={{ title: '高级功能与进阶技巧 →', href: '/tutorials/claude-code/05-advanced' }}
+/>

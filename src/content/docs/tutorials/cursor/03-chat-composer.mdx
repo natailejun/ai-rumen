@@ -1,0 +1,107 @@
+---
+title: Cursor Chat 与 Composer 深入
+description: 掌握 Cursor 三大 AI 功能的最佳实践
+sidebar:
+  order: 3
+series: cursor
+seriesOrder: 3
+difficulty: intermediate
+estimatedTime: '12 分钟'
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+深入了解 Cursor 的 Chat、Ctrl+K、Composer 三种模式的区别和最佳实践。
+
+---
+
+## Chat 模式深入
+
+### Chat 的两种形态
+
+| 形态 | 怎么触发 | 特点 |
+|------|--------|------|
+| **独立 Chat** | `Ctrl+I` → 新面板 | 可以反复对话，上下文保持 |
+| **选中后 Chat** | 选中代码 → `Ctrl+I` | AI 知道你在讨论哪段代码 |
+
+### Chat 的实用场景
+
+```
+"这段代码是做什么的？"
+"这个函数有没有潜在的性能问题？"
+"帮我写一个处理这个 JSON 数据的函数"
+"这段代码还能怎么优化？"
+```
+
+---
+
+## Composer 深入
+
+Composer 能做的事远超生成新文件：
+
+### 跨文件修改
+```
+在 Composer 中：
+"在 src/components/ 下创建 Header.tsx 和 Footer.tsx，并在 App.tsx 中引用它们"
+```
+
+### 重构一个功能
+```
+"把 index.html 里的 JavaScript 代码提取到 script.js 中，保持功能不变"
+```
+
+### 根据数据生成代码
+```
+"根据 data.json 的结构，生成一个展示数据的表格页面"
+```
+
+### Composer 的 Normal vs Agent 模式
+
+| 模式 | 说明 | 适用 |
+|------|------|------|
+| **Normal** | AI 生成代码建议，你审查后接受 | 日常使用 |
+| **Agent** | AI 自主操作，可以运行终端命令 | 进阶用户 |
+
+---
+
+## Ctrl+K 进阶用法
+
+### 不选代码也能用
+
+按 `Ctrl+K` 时如果没有选中内容，会进入**终端输入模式**：
+- 输入命令描述 → AI 生成终端命令
+- 确认后直接执行
+
+### 常用 Ctrl+K 指令
+
+| 场景 | 操作 |
+|------|------|
+| 重构一段代码 | 选中 → "用更现代的方式重写" |
+| 添加注释 | 选中 → "给这段代码加详细的中文注释" |
+| 修复 bug | 选中 → "修复这个 [报错信息]" |
+| 改样式 | 选中 CSS → "把按钮变大，颜色改暖色" |
+| 加功能 | 选中函数 → "加一个输入验证" |
+
+---
+
+## 常见问题
+
+<FAQItem question="Chat 和 Composer 怎么选？">
+  Chat 适合讨论和分析，Composer 适合创建和重构。简单说：先聊（Chat）→ 想清楚要什么 → 用 Composer 实现。
+</FAQItem>
+
+<FAQItem question="Composer Agent 模式安全吗？">
+  Agent 模式会读写文件和运行命令。建议在项目初始阶段或备份后使用。日常用 Normal 模式更稳妥。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 第一次 AI 编辑', href: '/tutorials/cursor/02-first-edit' }}
+  next={{ title: '实用技巧合集 →', href: '/tutorials/cursor/04-tips-tricks' }}
+/>

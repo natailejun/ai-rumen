@@ -1,0 +1,101 @@
+---
+title: Cursor 实用技巧合集
+description: Rules for AI、模型选择、快捷键、好用的扩展——效率翻倍
+sidebar:
+  order: 4
+series: cursor
+seriesOrder: 4
+difficulty: intermediate
+estimatedTime: '10 分钟'
+updatedAt: '2026-06-20'
+---
+
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+掌握 Cursor 的效率技巧，让你的使用体验更上一层楼。
+
+---
+
+## Rules for AI —— 项目级的 AI 行为规则
+
+Cursor 支持在项目根目录创建 `.cursorrules` 文件来规定 AI 的行为。类似 Claude Code 的 `CLAUDE.md`。
+
+### 创建 `.cursorrules`
+
+在项目根目录新建 `.cursorrules` 文件：
+
+```
+你是一个前端开发专家。
+- 使用 HTML + CSS + 原生 JS，不要引入框架
+- 所有注释用简体中文
+- CSS 使用 CSS 变量管理颜色
+- 优先写可访问性好的代码（ARIA 标签、语义化 HTML）
+- 代码要保持简洁，不要过度注释
+```
+
+AI 在每次对话中都会**自动遵循**这些规则。
+
+---
+
+## 模型选择
+
+在 Cursor 中可以选择不同的 AI 模型：
+
+| 模型 | 优势 | 适合场景 |
+|------|------|---------|
+| **Claude 4 Sonnet** | 代码理解最强 | 重构、debug、复杂逻辑 |
+| **GPT-4o** | 综合能力强 | 创建新功能、写文档 |
+| **Cursor Small** | 快速、免费额度多 | 简单修改、样式调整 |
+| **Gemini 2.5 Pro** | 免费、长上下文 | 跨文件分析 |
+
+> 💡 日常用默认模型就行。遇到复杂问题时可以手动切换到 Claude 4 Sonnet。
+
+---
+
+## 快捷键速查
+
+| 快捷键 (Win) | 快捷键 (Mac) | 功能 |
+|-------------|-------------|------|
+| `Ctrl+K` | `Cmd+K` | 行内编辑 |
+| `Ctrl+I` | `Cmd+I` | 打开 Chat |
+| `Ctrl+Shift+I` | `Cmd+Shift+I` | 打开 Composer |
+| `Ctrl+Y` | `Cmd+Y` | 接受 AI 修改 |
+| `Ctrl+N` | `Cmd+N` | 拒绝 AI 修改 |
+| `Ctrl+L` | `Cmd+L` | 选中整个函数 |
+| `Ctrl+Shift+L` | `Cmd+Shift+L` | 编辑整个函数 |
+| `@` | `@` | 在 Chat 中引用文件/符号 |
+
+---
+
+## Privacy Mode（隐私模式）
+
+<WarningCallout title="数据安全" type="tip">
+  如果你处理敏感代码，建议开启 Privacy Mode。
+</WarningCallout>
+
+**位置**：Settings → Cursor Settings → Privacy
+
+开启后，你的代码**不会被存储在 Cursor 的服务器上**。
+
+---
+
+## 常见问题
+
+<FAQItem question="Cursor 免费额度用完了怎么办？">
+  免费额度是按月重置的。用完后可以等重置，也可以升级到 Pro（$20/月）。
+</FAQItem>
+
+<FAQItem question=".cursorrules 和 CLAUDE.md 能同时用吗？">
+  可以。.cursorrules 只在 Cursor 中生效，CLAUDE.md 只在 Claude Code 中生效——互不影响。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← Chat 与 Composer 深入', href: '/tutorials/cursor/03-chat-composer' }}
+  next={{ title: 'DeepSeek 教程 →', href: '/tutorials/deepseek/' }}
+/>

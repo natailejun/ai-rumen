@@ -1,0 +1,181 @@
+---
+title: 安装 Node.js — 为 Claude Code 准备环境
+description: Windows 和 Mac 上安装 Node.js 的详细步骤，零基础可操作
+sidebar:
+  order: 1
+  badge:
+    text: 第一步
+    variant: success
+series: claude-code
+seriesOrder: 1
+difficulty: beginner
+estimatedTime: '8 分钟'
+tools:
+  - name: 一台电脑（Windows 或 Mac）
+  - name: 网络连接
+screenshotCount: 5
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你的电脑上会安装好 **Node.js**——它是运行 Claude Code 必需的环境。
+
+- ✅ Node.js 安装完成
+- ✅ 验证安装成功
+- ✅ 了解什么是 Node.js（不需要深入）
+
+---
+
+## 什么是 Node.js？（30 秒版）
+
+**Node.js** 是一个运行环境，很多 AI 编程工具（包括 Claude Code）依赖它。
+
+不用理解太深——就像你不需要理解搜索引擎原理也能用百度一样。**你只需要把它安装到电脑上就行了。**
+
+---
+
+## Windows 系统安装
+
+### 第一步：下载安装包
+
+1. 打开浏览器，访问 **[nodejs.org](https://nodejs.org)**
+2. 你会看到两个下载按钮：
+
+<Screenshot
+  src="/images/tutorials/claude-code/nodejs-download.png"
+  alt="Node.js 官网下载页面截图"
+  caption="图：Node.js 官网——点击左侧 LTS 版本的按钮"
+/>
+
+| 按钮 | 版本类型 | 说明 |
+|------|---------|------|
+| **左侧（LTS）** | 长期支持版 | ✅ **选这个！** 稳定可靠 |
+| 右侧（Current） | 最新版 | ❌ 可能有未知 bug |
+
+👉 点击左侧 **LTS** 版本下载（版本号会变化，比如 20.x 或 22.x，无所谓，选 LTS 就行）。
+
+### 第二步：运行安装程序
+
+<Screenshot
+  src="/images/tutorials/claude-code/nodejs-installer.png"
+  alt="Node.js 安装程序截图"
+  caption="图：Windows 安装程序——一路点击 Next 即可"
+/>
+
+1. 双击下载好的 `.msi` 文件
+2. 看到安装向导 → 点击 **Next**
+3. 同意许可协议（勾选 I accept）→ **Next**
+4. 安装路径保持默认 → **Next**
+5. 组件选择保持默认 → **Next**
+6. 点击 **Install** 开始安装
+7. 如果弹出"是否允许此应用更改你的设备" → 点 **是**
+8. 等待进度条走完 → 点击 **Finish**
+
+> 🎉 就这一路 Next 点过去，不需要改任何设置。
+
+---
+
+## Mac 系统安装
+
+### 方法 A：下载安装包（推荐新手）
+
+1. 打开浏览器，访问 **[nodejs.org](https://nodejs.org)**
+2. 点击左侧 **LTS** 版本下载 `.pkg` 文件
+3. 双击 `.pkg` 文件 → 一路 Next
+4. 完成！
+
+### 方法 B：用 Homebrew（如果你熟悉命令行）
+
+```bash
+brew install node
+```
+
+> 💡 如果你不知道什么是 Homebrew，用方法 A 就可以。
+
+---
+
+## 验证安装：确认 Node.js 装好了
+
+安装完成后，我们来确认一下是否成功。
+
+### Windows 用户
+
+1. 按键盘 **Win + R**，输入 `cmd`，回车 → 打开命令提示符
+2. 输入以下命令并回车：
+
+```bash
+node --version
+```
+
+3. 如果你看到类似 `v20.11.0` 这样的输出 → ✅ 安装成功！
+
+<Screenshot
+  src="/images/tutorials/claude-code/node-version-check.png"
+  alt="命令行中 node --version 输出截图"
+  caption="图：输入 node --version 后应该看到版本号"
+/>
+
+再验证一下 npm（Node.js 附带安装的包管理器）：
+
+```bash
+npm --version
+```
+
+应该会显示类似 `10.2.4` 的版本号。
+
+### Mac 用户
+
+1. 打开 **终端**（Terminal）—— 在 Spotlight 搜索 "Terminal" 即可
+2. 输入：
+
+```bash
+node --version
+npm --version
+```
+
+同样应该看到版本号。
+
+---
+
+## 搞懂几个基本概念
+
+后面教程会用到这些词，先认识一下：
+
+| 术语 | 是什么 | 什么时候用到 |
+|------|--------|-------------|
+| **Node.js** | 运行环境 | 你现在刚装好的就是它 |
+| **npm** | 包管理器（装工具的） | 用来安装 Claude Code |
+| **终端/Terminal** | 输入命令的黑窗口 | 你会在这里使用 Claude Code |
+| **命令行/CLI** | 同上，用文字操控电脑的方式 | 不用怕，一步步跟着做就行 |
+
+---
+
+## 常见问题
+
+<FAQItem question="安装时提示'不是有效的 Windows 程序'？">
+  可能是下载的文件损坏了。回到 nodejs.org 重新下载一次，确保文件完整下载。
+</FAQItem>
+
+<FAQItem question="node --version 显示'不是内部或外部命令'？">
+  重启电脑试试。如果还不行，可能是安装时环境变量没设置成功。卸载后重新安装，一路默认选项不要改。
+</FAQItem>
+
+<FAQItem question="装完能卸载吗？">
+  能。Node.js 只是一个普通的软件，和微信、浏览器一样，随时可以在"控制面板 → 程序和功能"中卸载（Windows）或者删除 App（Mac）。
+</FAQItem>
+
+<FAQItem question="不装 Node.js 就不能用 AI 编程工具吗？">
+  不一定。有些工具（如 Cursor）自带环境不需要 Node.js。但 Claude Code 是基于 Node.js 的命令行工具，必须安装。如果你是零基础，可以先用 Cursor（本网站也有教程）。
+</FAQItem>
+
+---
+
+<NextSteps
+  next={{ title: '安装 Claude Code →', href: '/tutorials/claude-code/02-install-claude' }}
+/>

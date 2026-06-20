@@ -1,0 +1,115 @@
+---
+title: 安全使用 AI 的基础知识
+description: 使用 AI 时要注意安全、隐私和合规问题
+sidebar:
+  order: 3
+series: getting-started
+seriesOrder: 3
+difficulty: beginner
+estimatedTime: '5 分钟'
+updatedAt: '2026-06-20'
+---
+
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会知道：
+
+- 使用 AI 时哪些信息不该输入
+- 如何保护自己的隐私
+- 免费版和付费版的安全差异
+
+---
+
+## 核心原则：不要把 AI 当保险柜
+
+<WarningCallout type="danger" title="记住这条最重要">
+  <strong>你在 AI 对话中输入的所有内容，都可能被 AI 公司看到、存储、用于训练。</strong><br />
+  不要输入密码、身份证号、银行卡号、公司机密等敏感信息。
+</WarningCallout>
+
+---
+
+## 使用 AI 的安全 Checklist
+
+### ✅ 可以放心做的事
+
+- 问通用知识（"什么叫机器学习"）
+- 让 AI 润色你已经写好的内容
+- 让 AI 写代码、改 bug（注意不要贴公司私有代码）
+- 头脑风暴、想创意
+- 翻译公开内容
+
+### ⚠️ 需要谨慎的事
+
+- 处理公司内部文件（先确认公司政策是否允许）
+- 让 AI 写邮件草稿（不要把真实的客户信息贴进去）
+- 处理个人日记/私密内容
+
+### ❌ 绝对不要做的事
+
+- 输入密码、银行卡号、身份证号
+- 输入公司商业机密、未公开的产品计划
+- 输入他人的隐私信息（客户名单、病历等）
+- 用 AI 做违法的事情（生成诈骗内容、恶意代码等）
+
+---
+
+## 隐私保护建议
+
+1. **使用 AI 前先想一下**："这段内容被人看到会有什么后果？"
+2. **大公司 AI 相对更安全**：ChatGPT、Claude 有成熟的数据处理政策
+3. **关闭对话记录**：ChatGPT 和 Claude 都允许在设置中关闭对话历史用于训练
+4. **国产 AI 的隐私政策**：DeepSeek、Kimi 等国产工具同样有隐私保护，但建议仔细阅读它们的隐私条款
+5. **清除敏感内容**：如果误输入了敏感信息，可以删除该对话
+
+---
+
+## 免费版 vs 付费版：安全差异
+
+| 维度 | 免费版 | 付费版 |
+|------|-------|-------|
+| 数据用于训练 | 通常会 | 通常可关闭 |
+| 隐私保护 | 基础 | 更强 |
+| 适合场景 | 个人学习、日常使用 | 工作场景、敏感内容 |
+
+> 💡 **建议**：如果你在工作中重度使用 AI，建议买个付费版，并关掉"对话用于训练"的选项。一个月几十块钱，隐私保护上一个档次。
+
+---
+
+## 小心 AI 诈骗
+
+<WarningCallout title="防骗提醒" type="danger">
+  现在有一些骗局利用 AI 技术，请注意：
+</WarningCallout>
+
+- 收到"熟人"借钱消息？先打电话确认，可能是 AI 语音合成
+- 看到"名人"推荐产品？可能是 AI 换脸
+- 不要相信"AI 自动赚钱"的广告——大多是骗局
+- 不要向不明网站提供你的 AI 账号信息
+
+---
+
+## 常见问题
+
+<FAQItem question="使用 AI 需要实名认证吗？">
+  国外工具（如 ChatGPT、Claude）通常不需要实名认证，只需要邮箱。国内工具（如 Kimi、DeepSeek）根据中国法律要求可能需要手机号验证。这是正常的合规要求。
+</FAQItem>
+
+<FAQItem question="我用免费 AI，它会偷我数据吗？">
+  不会"偷"。但免费 AI 通常会在隐私政策中说明"可能使用你的对话数据来改进模型"。这不是偷，是公开写的。如果你介意，付费版通常可以关闭这个选项。
+</FAQItem>
+
+<FAQItem question="AI 会记住我跟它说的话吗？">
+  会的。每次对话 AI 都有记忆，不同的对话是独立的。但你不能指望 AI 在两个不同的对话之间记住你——每次新对话都是从头开始。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '怎么选择 AI 工具？', href: '/tutorials/getting-started/02-choose-tool' }}
+  next={{ title: 'ChatGPT 系列教程', href: '/tutorials/chatgpt/' }}
+/>

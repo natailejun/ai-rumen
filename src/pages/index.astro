@@ -1,0 +1,130 @@
+---
+import CategoryCard from '../components/CategoryCard.astro';
+import '../styles/custom.css';
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 入门指南 — 手把手教你用好 AI 工具</title>
+    <meta name="description" content="从零开始学习 AI 工具，消除技术焦虑。ChatGPT、Claude Code、Cursor 详细教程，每一步都有截图。" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <main style="max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem;">
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <div class="hero-texture"></div>
+        <h1>AI 其实没那么难</h1>
+        <p class="hero-subtitle">
+          手把手教你用好 AI 工具<br />
+          从零开始，消除技术焦虑，10 分钟就能上手
+        </p>
+        <div class="hero-cta-group">
+          <a href="/tutorials/getting-started/" class="hero-cta primary">🚀 开始学习</a>
+          <a href="/tutorials/chatgpt/" class="hero-cta secondary">📚 浏览教程</a>
+        </div>
+      </section>
+
+      <!-- Anxiety Relief Bar -->
+      <div class="anxiety-bar">
+        <div class="anxiety-item">
+          <span class="anxiety-icon">✅</span> 完全零基础？没关系！
+        </div>
+        <div class="anxiety-item">
+          <span class="anxiety-icon">📸</span> 每一步都有截图
+        </div>
+        <div class="anxiety-item">
+          <span class="anxiety-icon">🇨🇳</span> 中文环境友好
+        </div>
+      </div>
+
+      <!-- Tutorial Categories -->
+      <h2 class="section-heading">选择你想学的工具</h2>
+      <div class="category-grid">
+        <CategoryCard
+          icon="🤖"
+          title="ChatGPT"
+          description="从注册到精通，完整的 ChatGPT 使用教程，AI 对话入门首选。"
+          href="/tutorials/chatgpt/"
+          badge="最热门"
+        />
+        <CategoryCard
+          icon="⌨️"
+          title="Claude Code"
+          description="命令行 AI 编程工具，从安装到项目实战，写代码从未如此简单。"
+          href="/tutorials/claude-code/"
+          badge="最新"
+        />
+        <CategoryCard
+          icon="💻"
+          title="Cursor IDE"
+          description="AI 增强编程环境，在编辑器中直接使用 AI，VS Code 用户零学习成本。"
+          href="/tutorials/cursor/"
+        />
+        <CategoryCard
+          icon="🇨🇳"
+          title="DeepSeek"
+          description="国产 AI 模型，免费强大，无需科学上网，中文能力出众。"
+          href="/tutorials/deepseek/"
+          badge="免费"
+        />
+        <CategoryCard
+          icon="📄"
+          title="Kimi"
+          description="超长文本处理专家，一次处理 200K 字，文件对话、网页解析一把好手。"
+          href="/tutorials/kimi/"
+          badge="国产"
+        />
+        <CategoryCard
+          icon="🎓"
+          title="快速入门"
+          description="AI 是什么？怎么选工具？3 分钟了解 AI 基础知识，找到最适合你的工具。"
+          href="/tutorials/getting-started/"
+          badge="第一步"
+        />
+      </div>
+
+      <!-- Use Cases -->
+      <h2 class="section-heading">看看你能用 AI 做什么</h2>
+      <div class="use-case-grid">
+        <div class="use-case-item">
+          <div class="use-icon">✍️</div>
+          <div class="use-label">写周报、邮件</div>
+        </div>
+        <div class="use-case-item">
+          <div class="use-icon">💡</div>
+          <div class="use-label">头脑风暴</div>
+        </div>
+        <div class="use-case-item">
+          <div class="use-icon">🎨</div>
+          <div class="use-label">做 PPT 大纲</div>
+        </div>
+        <div class="use-case-item">
+          <div class="use-icon">🔍</div>
+          <div class="use-label">快速查资料</div>
+        </div>
+        <div class="use-case-item">
+          <div class="use-icon">📝</div>
+          <div class="use-label">润色文案</div>
+        </div>
+        <div class="use-case-item">
+          <div class="use-icon">💻</div>
+          <div class="use-label">写代码</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-links">
+          <a href="/about">关于我们</a>
+          <a href="/contact">联系我们</a>
+          <a href="/resources/faq">常见问题</a>
+        </div>
+        <p>© 2026 AI 入门指南 — 让每个人都能用上 AI</p>
+      </footer>
+    </main>
+  </body>
+</html>

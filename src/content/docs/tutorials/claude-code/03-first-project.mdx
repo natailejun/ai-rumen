@@ -1,0 +1,231 @@
+---
+title: 第一个 AI 编程项目 — 20 分钟用中文写代码
+description: 零基础，用 Claude Code 创建你的第一个程序
+sidebar:
+  order: 3
+series: claude-code
+seriesOrder: 3
+difficulty: beginner
+estimatedTime: '20 分钟'
+tools:
+  - name: Claude Code 已安装配置
+  - name: Node.js 环境就绪
+screenshotCount: 4
+updatedAt: '2026-06-20'
+---
+
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+## 本教程目标
+
+学完这篇，你会：
+
+- ✅ 用 Claude Code 从零创建一个完整的网页应用
+- ✅ 看到 AI 写的代码实际运行起来
+- ✅ 理解 Claude Code 的基本工作流程
+
+---
+
+## 我们要做什么？
+
+创建一个**个人简历网页**，包含：
+- 👤 姓名和照片占位
+- 📝 技能列表
+- 💼 工作经历
+- 📧 联系方式
+
+全程不需要手写一行代码——全部用中文告诉 Claude Code 你想做什么。
+
+---
+
+## 第一步：创建项目文件夹
+
+### 1.1 打开终端
+
+**Windows**：Win + R → 输入 `cmd` → 回车  
+**Mac**：打开 Terminal（终端）
+
+### 1.2 创建并进入文件夹
+
+```bash
+mkdir my-resume-website
+cd my-resume-website
+```
+
+"mkdir" 是 make directory（创建目录）的缩写，"cd" 是 change directory（切换目录）。
+
+### 1.3 启动 Claude Code
+
+```bash
+claude
+```
+
+<Screenshot
+  src="/images/tutorials/claude-code/claude-repl.png"
+  alt="Claude Code REPL 界面截图"
+  caption="图：进入 Claude Code 后的交互界面"
+/>
+
+> 💡 此时你的命令行进入了 Claude Code 的对话模式。不再是普通的命令行——你现在在和 AI 对话。
+
+---
+
+## 第二步：用中文描述你想要什么
+
+在 Claude Code 的对话界面中，输入以下内容（可以直接复制）：
+
+```
+请帮我创建一个个人简历网页。
+
+要求：
+1. 用 HTML + CSS 写，放在一个 index.html 文件里
+2. 页面要美观，用现代的简洁风格
+3. 包含以下内容：
+   - 姓名（用 "张三" 作为示例）
+   - 一句话个人介绍
+   - 技能列表（HTML、CSS、JavaScript、Python）
+   - 两段工作经历（示例内容即可）
+   - 联系邮箱
+4. 配色用白色背景，蓝色作为强调色
+5. 手机端也能正常浏览（响应式设计）
+
+请直接创建文件，不需要问我确认。
+```
+
+按回车发送。
+
+<Screenshot
+  src="/images/tutorials/claude-code/asking-claude.png"
+  alt="向 Claude Code 输入需求截图"
+  caption="图：把你的需求告诉 Claude Code"
+/>
+
+---
+
+## 第三步：看 Claude Code 写代码
+
+Claude Code 会：
+
+1. **分析你的需求** —— 理解你要什么
+2. **创建文件** —— 生成 `index.html`
+3. **写入代码** —— HTML + CSS 全部自动写好
+4. **告诉你做了什么** —— 简述它创建了什么
+
+这个过程通常只需要 **30 秒到 1 分钟**。
+
+<Screenshot
+  src="/images/tutorials/claude-code/claude-writing-code.png"
+  alt="Claude Code 正在写代码的截图"
+  caption="图：Claude Code 正在为你生成简历网页"
+/>
+
+---
+
+## 第四步：查看结果
+
+Claude Code 完成后，在你的项目文件夹中会多一个 `index.html` 文件。
+
+### 怎么查看？
+
+1. 打开你的文件管理器
+2. 找到 `my-resume-website` 文件夹
+3. 双击 `index.html` 文件
+4. 浏览器会自动打开，你就能看到你的简历网页了！
+
+<Screenshot
+  src="/images/tutorials/claude-code/resume-website-result.png"
+  alt="简历网页运行结果截图"
+  caption="图：你刚用 AI 创建的简历网页"
+/>
+
+> 🎉 **恭喜！你刚用 AI 写完了你人生中第一个程序！** 虽然不是你亲自敲的代码，但它是按照你的需求生成的——这就是 AI 编程的魅力。
+
+---
+
+## 第五步：让 AI 帮你修改
+
+如果觉得哪里不满意，不用自己改代码——直接让 Claude Code 改。
+
+回到终端（Claude Code 对话还在的话），输入新的要求：
+
+```
+把名字改成你的真实名字，把技能列表换成你想要的技能。
+```
+
+比如：
+
+```
+请做以下修改：
+1. 把 "张三" 改成 "王小明"
+2. 把技能改成：Excel、PPT、数据分析、AI工具使用
+3. 在页面顶部加一句座右铭："学习是一辈子的事"
+```
+
+Claude Code 会自动找到需要改的代码，修改完保存。
+
+> 💡 这就是 AI 编程的核心工作方式：**描述 → 生成 → 查看 → 继续描述 → 修改**——像一个循环对话。
+
+---
+
+## 第六步：退出 Claude Code
+
+在 Claude Code 对话中输入：
+
+```
+/exit
+```
+
+或者直接按键盘 **Ctrl + C**。
+
+---
+
+## 回顾：你刚学会了什么？
+
+| 步骤 | 做了什么 | 对应命令/操作 |
+|------|---------|-------------|
+| 1 | 创建项目文件夹 | `mkdir my-resume-website` |
+| 2 | 进入文件夹 | `cd my-resume-website` |
+| 3 | 启动 Claude Code | `claude` |
+| 4 | 描述需求 | 用中文输入你想做什么 |
+| 5 | 查看结果 | 双击 `index.html` |
+| 6 | 修改迭代 | 继续用中文提修改意见 |
+| 7 | 退出 | `/exit` 或 `Ctrl+C` |
+
+---
+
+## 练手小项目（试试自己来）
+
+掌握了基本方法后，试试这些简单的练手项目：
+
+1. **待办事项列表**：一个能添加/删除任务的网页
+2. **倒计时页面**：距离某个日期还有多少天
+3. **个人博客首页**：有文章列表、标签、搜索框
+4. **计算器**：一个简单的网页计算器
+
+每个项目都是一句话的事——告诉 Claude Code 你想要什么就行。
+
+---
+
+## 常见问题
+
+<FAQItem question="Claude Code 写的代码我不满意怎么办？">
+  直接告诉它哪里不满意。"颜色太暗了，换成浅色"、"布局太挤了"、"中文字太小了"——越具体越好。AI 不会不耐烦，你想改多少遍都行。
+</FAQItem>
+
+<FAQItem question="Claude Code 写错了怎么办？">
+  告诉它："我刚才说的那个地方你没做对，应该是这样……"。或者让它重做："删除刚才创建的文件，重新来，这次注意……"
+</FAQItem>
+
+<FAQItem question="我能让 Claude Code 同时做多个文件吗？">
+  能。比如你可以说："创建 index.html、style.css 和 script.js 三个文件，做一个……"。Claude Code 可以同时编辑多个文件。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← 安装 Claude Code', href: '/tutorials/claude-code/02-install-claude' }}
+  next={{ title: '日常使用工作流 →', href: '/tutorials/claude-code/04-workflow' }}
+/>

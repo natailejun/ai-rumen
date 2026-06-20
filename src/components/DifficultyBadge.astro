@@ -1,0 +1,23 @@
+---
+export interface Props {
+  level: 'beginner' | 'intermediate' | 'advanced';
+}
+
+const labels: Record<string, string> = {
+  beginner: '入门',
+  intermediate: '进阶',
+  advanced: '高级',
+};
+
+const icons: Record<string, string> = {
+  beginner: '🌱',
+  intermediate: '⚡',
+  advanced: '🚀',
+};
+
+const { level } = Astro.props;
+---
+
+<span class={`difficulty-badge ${level}`}>
+  {icons[level]} {labels[level]}
+</span>
