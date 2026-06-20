@@ -11,7 +11,7 @@ const base = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AI 入门指南 — 手把手教你用好 AI 工具</title>
     <meta name="description" content="从零开始学习 AI 工具，消除技术焦虑。ChatGPT、Claude Code、Cursor 详细教程，每一步都有截图。" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   </head>
   <body>
     <main style="max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem;">
@@ -25,8 +25,8 @@ const base = import.meta.env.BASE_URL;
           从零开始，消除技术焦虑，10 分钟就能上手
         </p>
         <div class="hero-cta-group">
-          <a href={`${base}tutorials/getting-started/`} class="hero-cta primary">🚀 开始学习</a>
-          <a href={`${base}tutorials/chatgpt/`} class="hero-cta secondary">📚 浏览教程</a>
+          <a href={`${base}/tutorials/getting-started/`} class="hero-cta primary">🚀 开始学习</a>
+          <a href={`${base}/tutorials/chatgpt/`} class="hero-cta secondary">📚 浏览教程</a>
         </div>
       </section>
 
@@ -50,41 +50,41 @@ const base = import.meta.env.BASE_URL;
           icon="🤖"
           title="ChatGPT"
           description="从注册到精通，完整的 ChatGPT 使用教程，AI 对话入门首选。"
-          href={`${base}tutorials/chatgpt/`}
+          href={`${base}/tutorials/chatgpt/`}
           badge="最热门"
         />
         <CategoryCard
           icon="⌨️"
           title="Claude Code"
           description="命令行 AI 编程工具，从安装到项目实战，写代码从未如此简单。"
-          href={`${base}tutorials/claude-code/`}
+          href={`${base}/tutorials/claude-code/`}
           badge="最新"
         />
         <CategoryCard
           icon="💻"
           title="Cursor IDE"
           description="AI 增强编程环境，在编辑器中直接使用 AI，VS Code 用户零学习成本。"
-          href={`${base}tutorials/cursor/`}
+          href={`${base}/tutorials/cursor/`}
         />
         <CategoryCard
           icon="🇨🇳"
           title="DeepSeek"
           description="国产 AI 模型，免费强大，无需科学上网，中文能力出众。"
-          href={`${base}tutorials/deepseek/`}
+          href={`${base}/tutorials/deepseek/`}
           badge="免费"
         />
         <CategoryCard
           icon="📄"
           title="Kimi"
           description="超长文本处理专家，一次处理 200K 字，文件对话、网页解析一把好手。"
-          href={`${base}tutorials/kimi/`}
+          href={`${base}/tutorials/kimi/`}
           badge="国产"
         />
         <CategoryCard
           icon="🎓"
           title="快速入门"
           description="AI 是什么？怎么选工具？3 分钟了解 AI 基础知识，找到最适合你的工具。"
-          href={`${base}tutorials/getting-started/`}
+          href={`${base}/tutorials/getting-started/`}
           badge="第一步"
         />
       </div>
@@ -121,9 +121,9 @@ const base = import.meta.env.BASE_URL;
       <!-- Footer -->
       <footer class="site-footer">
         <div class="footer-links">
-          <a href={`${base}about`}>关于我们</a>
-          <a href={`${base}contact`}>联系我们</a>
-          <a href={`${base}resources/faq`}>常见问题</a>
+          <a href={`${base}/about`}>关于我们</a>
+          <a href={`${base}/contact`}>联系我们</a>
+          <a href={`${base}/resources/faq`}>常见问题</a>
         </div>
         <p>© 2026 AI 入门指南 — 让每个人都能用上 AI</p>
       </footer>
