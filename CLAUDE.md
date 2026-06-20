@@ -6,6 +6,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **AI 入门指南 (ai-rumen)** — a Chinese-language AI tutorial website built with Astro 6 + Starlight. The site contains step-by-step tutorials teaching non-technical Chinese users how to use AI tools (ChatGPT, Claude Code, Cursor, DeepSeek, Kimi). Target audience: people anxious about AI who need detailed, screenshot-heavy, zero-prerequisite walkthroughs.
 
+## Deployment
+
+Live: **https://natailejun.github.io/ai-rumen/** (GitHub Pages)
+
+`astro.config.mjs` has `site: 'https://natailejun.github.io'` and `base: '/ai-rumen'` for sub-path deployment.
+
+Automatic deploy via GitHub Actions (`.github/workflows/deploy.yml`): pushes to `master` trigger build + deploy. Astro 6 requires Node.js ≥22.12.0 — the workflow uses `node-version: 22`.
+
+**CRITICAL for sub-path pages:** All `href` values in `src/pages/index.astro` MUST use `` {`${import.meta.env.BASE_URL}/path/`} ``, never bare `/path/`. Starlight-managed pages auto-prefix correctly, but the custom homepage does not.
+
+## Git
+
+Remote: `https://github.com/natailejun/ai-rumen.git`, branch `master`.
+
 ## Commands
 
 ```bash
