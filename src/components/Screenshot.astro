@@ -7,19 +7,27 @@ export interface Props {
 }
 const { src, alt, caption, width } = Astro.props;
 const isDev = import.meta.env.DEV;
+// Generate SVG placeholder path: /images/tutorials/chatgpt/01-landing-page.png → /images/tutorials/chatgpt/01-landing-page.svg
+const svgSrc = src.replace(/\.png$/, '.svg');
 ---
 
 <div class="screenshot-wrapper" style="margin: 1.5rem 0;">
   {
     isDev ? (
-      <div class="screenshot-placeholder" style={width ? `max-width: ${width};` : ''}>
-        <div>
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📸</div>
-          <div style="font-weight: 600; margin-bottom: 0.25rem;">截图待插入</div>
-          <div style="font-size: 0.8rem; opacity: 0.7;">{src}</div>
-          {caption && <div style="margin-top: 0.5rem; font-style: italic;">{caption}</div>}
-        </div>
-      </div>
+      <figure style="margin: 0;">
+        <img
+          src={svgSrc}
+          alt={alt}
+          loading="lazy"
+          style={`width: ${width || '100%'}; border-radius: 10px; border: 1px solid #E2E8F0; background: #f8fafc;`}
+          onerror={`this.onerror=null; this.src='${src}'; this.style.background='';`}
+        />
+        {caption && (
+          <figcaption style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #64748B;">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
     ) : (
       <figure style="margin: 0;">
         <img
@@ -27,6 +35,7 @@ const isDev = import.meta.env.DEV;
           alt={alt}
           loading="lazy"
           style={`width: ${width || '100%'}; border-radius: 10px; border: 1px solid #E2E8F0;`}
+          onerror={`this.onerror=null; this.src='${svgSrc}'; this.style.background='#f8fafc';`}
         />
         {caption && (
           <figcaption style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #64748B;">

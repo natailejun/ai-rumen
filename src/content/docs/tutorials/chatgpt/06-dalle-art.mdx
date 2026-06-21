@@ -1,0 +1,255 @@
+---
+title: "用 ChatGPT 画图 — DALL·E 完全指南"
+description: "用文字描述让 AI 帮你画图，零美术基础也能创作精美图片"
+sidebar:
+  order: 6
+series: chatgpt
+seriesOrder: 6
+difficulty: beginner
+estimatedTime: '15 分钟'
+tools:
+  - name: ChatGPT 账号（免费版即可）
+screenshotCount: 5
+updatedAt: '2026-06-21'
+premium: true
+premiumPrice: '¥19.9'
+---
+
+import SponsorCallout from '../../../../components/SponsorCallout.astro'
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+
+<SponsorCallout price="¥19.9" series="ChatGPT 进阶" />
+
+## 本教程目标
+
+学完这篇，你会用 DALL·E 轻松画出各种风格的图片：
+
+- ✅ 了解 DALL·E 是什么、怎么用
+- ✅ 掌握写好画图提示词的技巧
+- ✅ 学会修改图片、切换风格
+- ✅ 能独立创作出满意的 AI 绘画作品
+
+---
+
+## 准备工作
+
+你需要一个 ChatGPT 账号（**免费版就够了**）。DALL·E 已经内置在 ChatGPT 中，不需要额外安装任何东西。
+
+免费用户每天有一定的使用次数限制，但日常使用完全够用。如果你需要大量画图，可以升级到 ChatGPT Plus。
+
+---
+
+## 什么是 DALL·E？
+
+DALL·E 是 OpenAI（就是做 ChatGPT 的那家公司）推出的 **AI 绘画工具**。你用文字描述想要的画面，它就能帮你画出来。
+
+它直接集成在 ChatGPT 里，你不需要打开别的网站或 App——在同一个对话框里打字就行。
+
+**DALL·E 能做什么？**
+
+- 根据文字描述生成全新的图片
+- 把你拍的照片变成不同的艺术风格
+- 设计海报、插画、头像、表情包等
+- 画 Logo、图标、UI 素材
+
+---
+
+## 第一次画图：试试看
+
+打开 ChatGPT，在输入框里直接描述你想要的画面就行。不需要选择特殊模式，ChatGPT 会自动识别你要画图。
+
+**试一下这句：**
+
+> 帮我画一只橘色的小猫，坐在窗台上看夕阳
+
+<Screenshot
+  src="/images/tutorials/chatgpt/dalle-prompt-example.png"
+  alt="在 ChatGPT 中输入画图提示词的截图"
+  caption="图：在 ChatGPT 输入框中直接描述你想要的画面"
+/>
+
+几秒钟后，ChatGPT 就会生成一张图片。如果你觉得不错，可以继续追问或下载；如果不太满意，直接告诉它怎么改就行。
+
+> 💡 **小提示**：用中文或英文描述都可以。DALL·E 对英文提示词的理解会更精准一些，但中文也完全可用。
+
+---
+
+## 提示词的写法：让 AI 画出你想要的
+
+画图的关键在于 **提示词（Prompt）**——你描述得越清楚，画出来就越接近你的想象。
+
+### 提示词公式
+
+一个好用的画图提示词包含四个要素：
+
+```
+主体 + 场景 + 风格 + 情绪
+```
+
+| 要素 | 说明 | 举例 |
+|------|------|------|
+| **主体** | 画面的核心对象 | 一个穿红裙子的女孩、一只柴犬、一杯咖啡 |
+| **场景** | 背景和环境 | 在樱花树下、在海边日落时、在书房里 |
+| **风格** | 艺术风格 | 水彩画、油画、3D 渲染、像素风、扁平插画 |
+| **情绪** | 整体氛围 | 温馨的、梦幻的、酷炫的、安静的 |
+
+### 对比一下
+
+> ❌ "画一座山"
+> → 太模糊，AI 只能随便画一座山
+
+> ✅ "一座被晨雾笼罩的中国水墨风格的群山，山脚有小桥流水人家，整体宁静淡雅"
+> → 主体（山）+ 场景（晨雾、小桥流水）+ 风格（水墨）+ 情绪（宁静淡雅）
+
+---
+
+## 常用风格词汇表
+
+在提示词中加上风格描述，可以让画面效果大不相同：
+
+| 中文描述 | 英文描述 | 效果特点 |
+|----------|----------|----------|
+| 水彩画 | watercolor painting | 色彩通透、笔触柔和 |
+| 油画 | oil painting | 色彩浓厚、笔触明显 |
+| 3D 渲染 | 3D render | 立体感强、像动画电影 |
+| 像素风 | pixel art | 复古游戏感、可爱 |
+| 赛博朋克 | cyberpunk | 霓虹灯、未来城市、酷炫 |
+| 扁平插画 | flat illustration | 简洁现代、适合做图标 |
+| 吉卜力风格 | Studio Ghibli style | 日式动画风、清新治愈 |
+| 超写实 | photorealistic | 接近真实照片的效果 |
+| 莫奈风格 | in the style of Monet | 印象派、光影朦胧 |
+| 漫画风 | anime style | 日漫效果、线条清晰 |
+
+<Screenshot
+  src="/images/tutorials/chatgpt/dalle-style-comparison.png"
+  alt="不同风格词汇生成的图片对比"
+  caption="图：同一个主题，加上不同风格词汇，效果完全不同"
+/>
+
+> 💡 **试试看**：用同一个主体，分别加上"水彩画"和"赛博朋克"风格，你会看到截然不同的效果。
+
+---
+
+## 修改和重新生成
+
+画出来的图不满意？没关系，直接用自然语言告诉 ChatGPT 你的修改意见。
+
+### 常见的修改方式
+
+| 想要的修改 | 怎么说 |
+|-----------|--------|
+| 换个颜色 | "把裙子改成蓝色" |
+| 换个角度 | "从俯视角度看" |
+| 加个元素 | "加上星空背景" |
+| 去掉一些东西 | "去掉文字" |
+| 调整风格 | "改成水彩画风格" |
+| 更可爱 | "让它更可爱一些，大眼睛" |
+
+<Screenshot
+  src="/images/tutorials/chatgpt/dalle-modify.png"
+  alt="在对话中修改图片的截图"
+  caption="图：直接用中文告诉 ChatGPT 你想怎么改"
+
+/>
+
+你也可以直接说"重新生成"，ChatGPT 会用同样的描述再画一张，通常会有所不同。多试几次，总会找到满意的。
+
+---
+
+## 下载和分享你的作品
+
+满意了，想保存图片？很简单：
+
+1. 把鼠标移到图片上
+2. 点击右上角的 **下载图标**（或者右键点击图片 → 另存为）
+3. 图片会保存为 PNG 格式
+
+<Screenshot
+  src="/images/tutorials/chatgpt/dalle-download.png"
+  alt="下载 DALL·E 生成图片的截图"
+  caption="图：鼠标悬停在图片上，点击下载按钮即可保存"
+/>
+
+### 分享方式
+
+- **直接发图片**：保存后发给朋友或发朋友圈
+- **复制图片链接**：右键 → 复制图片地址，分享链接
+- **发社交媒体**：保存后上传到小红书、微博等平台
+
+> ⚠️ DALL·E 生成的图片会有小角标水标，这是 OpenAI 标记 AI 生成内容的方式。
+
+---
+
+## 提示词实战示例
+
+下面给你几个可以直接使用的示例，从简单到复杂。
+
+### 示例 1：简单头像
+
+**中文提示词：**
+> 画一个可爱的卡通头像，一个戴眼镜的男生，圆脸，短发，微笑，简洁的蓝色渐变背景
+
+**英文提示词：**
+> A cute cartoon avatar of a boy wearing glasses, round face, short hair, smiling, simple blue gradient background, flat illustration style
+
+---
+
+### 示例 2：产品海报
+
+**中文提示词：**
+> 设计一张奶茶店促销海报，主体是一杯冒热气的珍珠奶茶，背景是粉橙色渐变，上面写着"第二杯半价"，清新可爱风格，适合发朋友圈
+
+**英文提示词：**
+> Design a bubble tea shop promotional poster featuring a steaming cup of boba tea, pink-orange gradient background, fresh and cute style, with text "Buy One Get One 50% Off", social media friendly
+
+---
+
+### 示例 3：场景插画
+
+**中文提示词：**
+> 一间深夜还在营业的书店，暖黄色的灯光，窗外下着雨，书架上摆满了书，角落里有一只橘猫在睡觉，温馨治愈的氛围，吉卜力动画风格
+
+**英文提示词：**
+> A cozy bookshop open late at night, warm yellow lighting, rain falling outside the window, bookshelves filled with books, an orange tabby cat sleeping in the corner, warm and healing atmosphere, Studio Ghibli style
+
+---
+
+### 示例 4：创意设计
+
+**中文提示词：**
+> 设计一个科技公司的 Logo，主题是"连接"，使用蓝色和白色，简洁现代的扁平风格，适合放在网站和名片上使用，背景白色
+
+**英文提示词：**
+> Design a tech company logo with the theme of "connection", using blue and white colors, clean modern flat design style, suitable for website and business card use, white background
+
+> 💡 **进阶技巧**：如果你有参考图片，可以直接上传图片并告诉 DALL·E "参考这张图的风格"，效果会更接近你想要的。
+
+---
+
+## 常见问题
+
+<FAQItem question="为什么生成的图和我想的不一样？">
+  这是最常见的问题。AI 理解文字的方式和人脑不同，描述越模糊，偏差越大。解决方法：<strong>1）加更多细节描述；2）用英文写提示词（准确度更高）；3）多试几次，每次调整一下用词</strong>。记住，画画本身就是一个迭代的过程。
+</FAQItem>
+
+<FAQItem question="DALL·E 和 Midjourney 哪个好？">
+  两者各有优势。<strong>DALL·E 的最大优点是方便</strong>——直接在 ChatGPT 里就能用，不需要额外注册，操作最简单。<strong>Midjourney 在艺术质感和风格化方面更强</strong>，但需要通过 Discord 使用，学习成本较高。如果你是新手，建议先从 DALL·E 开始，足够日常使用了。
+</FAQItem>
+
+<FAQItem question="免费版能用几次？">
+  免费版每天有一定的图片生成次数限制（通常每天 2-3 张左右）。对于日常使用来说是够用的。如果你需要批量画图，可以升级到 ChatGPT Plus（每月 $20），生成次数会大幅增加。另外，<strong>查看和修改已生成的图片是不限次数的</strong>。
+</FAQItem>
+
+<FAQItem question="生成的图片版权归谁？">
+  根据 OpenAI 的使用条款，<strong>DALL·E 生成的图片版权归用户所有</strong>。你可以将图片用于个人和商业用途（包括出售、出版等）。但要注意，不能让 AI 模仿在世艺术家的风格来生成作品，这涉及到版权和道德问题。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← ChatGPT 进阶技巧', href: '/tutorials/chatgpt/04-advanced-tips' }}
+  next={{ title: 'AI 绘画系列 →', href: '/tutorials/dalle/' }}
+/>

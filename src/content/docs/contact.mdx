@@ -2,6 +2,8 @@
 title: 联系我们
 ---
 
+import WeChatQR from '../../components/WeChatQR.astro'
+
 # 📞 联系我们
 
 ## 需要帮助？
@@ -58,9 +60,12 @@ title: 联系我们
 📱 **微信**：扫描下方二维码
 
 <div style="text-align: center; padding: 2rem; background: #F8FAFC; border-radius: 12px; margin: 1.5rem 0;">
-  <div style="width: 200px; height: 200px; background: #E2E8F0; border-radius: 12px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #94A3B8; font-size: 0.9rem;">
-    📱<br/>微信二维码<br/>（待替换）
-  </div>
+  <img
+    src="/ai-rumen/images/wechat-pay.jpg"
+    alt="微信收款码"
+    style="width: 200px; height: 200px; object-fit: contain; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);"
+    loading="lazy"
+  />
   <p style="margin-top: 0.75rem; color: #64748B; font-size: 0.9rem;">扫描二维码添加微信，备注"AI学习"</p>
 </div>
 

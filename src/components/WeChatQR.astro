@@ -2,13 +2,14 @@
 export interface Props {
   src: string;
   alt?: string;
+  caption?: string;
 }
-const { src, alt = '微信二维码' } = Astro.props;
+const { src, alt = '微信二维码', caption = '📱 扫描二维码添加微信' } = Astro.props;
 ---
 
 <div class="wechat-qr">
   <img src={src} alt={alt} />
   <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #64748B;">
-    📱 扫描二维码添加微信
+    {caption}
   </p>
 </div>

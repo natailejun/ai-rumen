@@ -1,0 +1,35 @@
+---
+export interface Props {
+  price: string;
+  series?: string;
+}
+const { price, series } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="sponsor-callout">
+  <div class="sponsor-callout-inner">
+    <div class="sponsor-icon">🔒</div>
+    <div class="sponsor-content">
+      <h3 class="sponsor-title">
+        本教程为赞助内容
+        {series && <span class="sponsor-series">{series}</span>}
+      </h3>
+      <p class="sponsor-price">{price}</p>
+      <p class="sponsor-desc">
+        赞助后即可解锁完整教程，支持作者持续更新内容 ❤️
+      </p>
+      <p class="sponsor-note">
+        扫描下方二维码完成付款，截图发给作者即可解锁
+      </p>
+    </div>
+    <div class="sponsor-qr">
+      <img
+        src={`${base}/images/wechat-pay.jpg`}
+        alt="微信收款码"
+        loading="lazy"
+      />
+      <span class="sponsor-qr-label">微信扫码支付</span>
+    </div>
+  </div>
+</div>

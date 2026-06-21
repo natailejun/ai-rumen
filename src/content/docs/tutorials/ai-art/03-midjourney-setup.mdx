@@ -1,0 +1,328 @@
+---
+title: Midjourney 注册入门 — 最强 AI 画图工具
+description: 从注册 Discord 到生成第一张 Midjourney 作品，完整图文教程
+sidebar:
+  order: 3
+series: ai-art
+seriesOrder: 3
+difficulty: intermediate
+estimatedTime: '25 分钟'
+updatedAt: '2026-06-21'
+premium: true
+premiumPrice: '¥29.9'
+screenshotCount: 5
+---
+
+import SponsorCallout from '../../../../components/SponsorCallout.astro'
+import Screenshot from '../../../../components/Screenshot.astro'
+import WarningCallout from '../../../../components/WarningCallout.astro'
+import PrereqChecklist from '../../../../components/PrereqChecklist.astro'
+import NextSteps from '../../../../components/NextSteps.astro'
+import FAQItem from '../../../../components/FAQItem.astro'
+import DifficultyBadge from '../../../../components/DifficultyBadge.astro'
+
+<SponsorCallout price="¥29.9" series="AI 绘画" />
+
+<DifficultyBadge level="intermediate" />
+
+## 本教程目标
+
+学完这篇，你会拥有：
+
+- ✅ 了解 Midjourney 是什么，为什么它是 AI 绘画的天花板
+- ✅ 注册好 Discord 账号（如果还没有的话）
+- ✅ 成功加入 Midjourney 服务器
+- ✅ 使用 /imagine 命令生成你的第一张 Midjourney 作品
+- ✅ 知道怎么保存和下载生成的图片
+
+---
+
+## 准备工作
+
+<PrereqChecklist items={[
+  { name: '科学上网环境（必须能访问 Discord 和 Midjourney）' },
+  { name: '一个电子邮箱（推荐 Gmail 或 Outlook）' },
+  { name: '一张支持外币支付的信用卡或借记卡（订阅 Midjourney 用）' }
+]} />
+
+<WarningCallout title="关于科学上网">
+  Midjourney 通过 <strong>Discord</strong> 使用，Discord 在国内无法直接访问，必须使用科学上网。
+  <br /><br />
+  如果你暂时无法科学上网，建议先用 <a href="/tutorials/ai-art/01-dalle-basics">DALL·E（ChatGPT 画图）</a>，它在国内通过科学上网也能用，而且免费。
+</WarningCallout>
+
+> 💡 **关于费用**：Midjourney 是付费工具，最便宜的套餐是 **$10/月**（约 ¥70）。没有免费版。如果你只是想体验 AI 画图，建议先用免费的 DALL·E。
+
+---
+
+## 第一步：了解 Midjourney 是什么
+
+**Midjourney**（简称 MJ）是目前公认画质最好的 AI 绘画工具之一。
+
+| 项目 | 说明 |
+|------|------|
+| 🏢 **开发公司** | Midjourney（独立公司，总部在旧金山） |
+| 🎨 **核心优势** | 画质极高、艺术感强、细节丰富 |
+| 💬 **使用方式** | 通过 Discord 输入文字命令 |
+| 💰 **价格** | $10/月起（Basic Plan） |
+| 🌐 **官网** | [midjourney.com](https://midjourney.com) |
+
+### 为什么 Midjourney 画质最好？
+
+Midjourney 在以下方面表现突出：
+
+| 优势 | 说明 |
+|------|------|
+| 🎨 **艺术感** | 自带"美感滤镜"，随便画都好看 |
+| 🔍 **细节** | 纹理、光影、构图都很精致 |
+| 🌈 **色彩** | 色彩搭配高级，不像 AI 画的 |
+| 📐 **构图** | 自动选择合理的构图方式 |
+
+> 💡 **和 DALL·E 比**：DALL·E 胜在方便（ChatGPT 里直接用），Midjourney 胜在画质。如果你追求"最好看"，选 Midjourney；如果你追求"最方便"，选 DALL·E。
+
+---
+
+## 第二步：注册 Discord 账号
+
+Midjourney 是在 **Discord** 上使用的。Discord 是一个类似微信群聊的聊天工具，在国外非常流行。
+
+如果你已经有 Discord 账号，直接跳到第三步。
+
+### 2.1 打开 Discord 官网
+
+1. 确保科学上网已开启
+2. 打开浏览器，访问 **[discord.com](https://discord.com)**
+3. 点击页面上的 **"Open Discord in your browser"** 或 **"Login"**
+
+<Screenshot
+  src="/images/tutorials/ai-art/midjourney-discord.png"
+  alt="Discord 官网首页截图"
+  caption="图：Discord 官网首页——点击登录或注册开始"
+/>
+
+### 2.2 注册新账号
+
+1. 点击 **"Register"**（注册）
+2. 填写以下信息：
+   - **Email**：你的邮箱地址
+   - **Display Name**：显示名称（随便取）
+   - **Username**：用户名（英文+数字，别人@你时用的）
+   - **Password**：设置密码
+   - **Date of Birth**：出生日期（必须 13 岁以上）
+3. 点击 **"Continue"**
+
+### 2.3 验证邮箱
+
+1. 打开你的邮箱，找到来自 Discord 的验证邮件
+2. 点击邮件中的 **"Verify Email"** 按钮
+3. 回到 Discord 页面，完成验证
+
+> 💡 **小提示**：如果没收到验证邮件，检查垃圾邮件箱，或者在 Discord 页面点击重新发送。
+
+<WarningCallout title="人机验证" type="tip">
+  注册时可能会弹出验证图片（让你选出红绿灯、自行车之类的）。这是正常的人机验证，按照提示选择正确的图片就好。
+</WarningCallout>
+
+---
+
+## 第三步：加入 Midjourney 服务器
+
+有了 Discord 账号后，现在加入 Midjourney 的"群聊"（服务器）：
+
+<Screenshot
+  src="/images/tutorials/ai-art/midjourney-join.png"
+  alt="加入 Midjourney 服务器截图"
+  caption="图：在 Midjourney 官网点击「Join the Beta」加入服务器"
+/>
+
+### 方法一：从 Midjourney 官网加入（推荐）
+
+1. 访问 **[midjourney.com](https://midjourney.com)**
+2. 点击页面上的 **"Join the Beta"** 按钮
+3. 会自动跳转到 Discord，弹出加入服务器的确认框
+4. 点击 **"Accept Invite"**（接受邀请）
+
+### 方法二：直接在 Discord 中搜索
+
+1. 打开 Discord
+2. 点击左侧栏最下方的 **"+"** 按钮（探索服务器）
+3. 搜索 **"Midjourney"**
+4. 点击 **"Join"** 加入
+
+加入成功后，你会看到 Discord 左侧栏多了一个 **Midjourney** 服务器，里面有很多频道（比如 #newbies-xxx、#general 等）。
+
+---
+
+## 第四步：订阅 Midjourney
+
+Midjourney 是付费的，你需要选一个套餐：
+
+| 套餐 | 价格 | 每月图片数量 | 特点 |
+|------|------|------------|------|
+| **Basic** | $10/月 | 约 200 张 | 基础功能够用 |
+| **Standard** | $30/月 | 约 900 张 + 15 小时快速模式 | 性价比最高 |
+| **Pro** | $60/月 | 无限（轻松模式） + 30 小时快速模式 | 专业用户 |
+| **Mega** | $120/月 | 无限（轻松模式） + 60 小时快速模式 | 重度用户 |
+
+> 💡 **新手建议**：先选 **Basic（$10/月）** 试试水。觉得不够用了再升级。
+
+### 订阅步骤：
+
+1. 在 Midjourney 服务器的任意频道中，输入 `/subscribe`
+2. 点击回车，会弹出一个订阅链接
+3. 点击链接跳转到 Midjourney 官网的订阅页面
+4. 选择套餐，填写支付信息（支持信用卡/借记卡）
+5. 完成付款
+
+<WarningCallout title="支付方式">
+  Midjourney 目前<strong>不支持支付宝和微信支付</strong>，需要用 Visa、Mastercard 等支持外币的信用卡或借记卡。
+  <br /><br />
+  如果你没有外币卡，可以：
+  <ul>
+    <li>问朋友帮忙代付</li>
+    <li>使用支持外币的虚拟信用卡服务</li>
+    <li>去银行办一张 Visa/Mastercard 借记卡（很多银行都支持）</li>
+  </ul>
+</WarningCallout>
+
+---
+
+## 第五步：使用 /imagine 命令生成图片
+
+这是最激动人心的一步！让我们来画第一张图：
+
+<Screenshot
+  src="/images/tutorials/ai-art/midjourney-imagine.png"
+  alt="Midjourney /imagine 命令截图"
+  caption="图：在 Discord 中输入 /imagine 命令，然后在 prompt 后面写描述"
+/>
+
+### 操作步骤：
+
+1. 在 Midjourney 服务器中，点击任意一个 **#newbies** 频道
+2. 在底部的输入框中，输入 `/imagine`
+3. Discord 会自动弹出提示，选择 **/imagine** 命令
+4. 在 **prompt** 后面输入你想要的画面描述
+5. 按 **Enter 键**发送
+
+### 示例：
+
+```
+/imagine a cute corgi puppy wearing sunglasses, sitting on a beach, watercolor style, golden hour lighting
+```
+
+翻译：一只可爱的柯基小狗戴着墨镜，坐在沙滩上，水彩画风格，金色夕阳
+
+> 💡 **注意**：Midjourney 的提示词目前以**英文**效果最好。建议用英文写提示词。如果你英文不好，可以先在 ChatGPT 中用中文描述，让 ChatGPT 翻译成英文。
+
+---
+
+## 第六步：等待生成并查看结果
+
+发送命令后，Midjourney 会开始生成图片。你会看到一个进度条：
+
+| 进度 | 说明 |
+|------|------|
+| ⏳ 0%-25% | 正在理解你的描述 |
+| ⏳ 25%-50% | 正在生成草图 |
+| ⏳ 50%-75% | 正在细化细节 |
+| ⏳ 75%-100% | 正在渲染最终效果 |
+| ✅ 完成 | 图片生成完毕！ |
+
+整个过程大约需要 **30 秒到 2 分钟**，取决于服务器繁忙程度和你选择的套餐。
+
+<Screenshot
+  src="/images/tutorials/ai-art/midjourney-result.png"
+  alt="Midjourney 生成结果截图"
+  caption="图：Midjourney 一次生成 4 张变体图——选择你最喜欢的！"
+/>
+
+生成完成后，你会看到 **4 张图片**拼在一起，下方有两排按钮：
+
+| 按钮 | U1 U2 U3 U4 | V1 V2 V3 V4 | 🔄 |
+|------|------------|------------|-----|
+| **含义** | 放大第 N 张 | 以第 N 张为基础重新生成变体 | 全部重新生成 |
+| **用途** | 选中喜欢的图放大 | 喜欢某个方向，换换细节 | 4 张都不满意 |
+
+> 💡 **U = Upscale**（放大），**V = Variation**（变体）。先点 **V** 找到喜欢的方向，再点 **U** 放大。
+
+---
+
+## 第七步：保存你的作品
+
+找到满意的图片后，把它保存下来：
+
+<Screenshot
+  src="/images/tutorials/ai-art/midjourney-download.png"
+  alt="保存 Midjourney 作品截图"
+  caption="图：点击图片放大后，右键保存或用下载按钮"
+/>
+
+### 保存方法：
+
+| 方法 | 步骤 |
+|------|------|
+| 💻 **电脑** | 点击图片放大 → 右键 → "图片另存为" |
+| 📱 **手机** | 点击图片放大 → 长按 → "保存图片" |
+| 🌐 **网页版** | 在 [midjourney.com](https://midjourney.com) 登录 → Gallery → 下载 |
+
+> 💡 **Midjourney Gallery**：在 midjourney.com 登录后，可以进入 Gallery 页面查看你所有生成过的图片，支持批量下载。
+
+---
+
+## 恭喜你！🎉
+
+你已经完成了 Midjourney 的入门！现在你知道了：
+
+- ✅ Midjourney 是什么，为什么它是最强 AI 画图工具
+- ✅ 怎么注册 Discord 并加入 Midjourney 服务器
+- ✅ 怎么订阅 Midjourney
+- ✅ 怎么用 /imagine 命令生成图片
+- ✅ 怎么选择和保存你喜欢的作品
+
+接下来，你可以在新频道中继续练习，尝试不同的提示词，探索不同的风格！
+
+---
+
+## 常见问题
+
+<FAQItem question="Midjourney 有免费试用吗？">
+  <strong>目前没有</strong>。Midjourney 已经取消了免费试用额度，必须付费订阅才能使用。如果你想先体验 AI 画图，建议用免费的 <a href="/tutorials/ai-art/01-dalle-basics">DALL·E</a>。
+</FAQItem>
+
+<FAQItem question="可以不通过 Discord 使用 Midjourney 吗？">
+  可以！Midjourney 已经推出了<strong>网页版</strong>（midjourney.com），登录后可以直接在网页上输入提示词生成图片，不需要通过 Discord。不过 Discord 的体验依然很完整，两种方式都可以用。
+</FAQItem>
+
+<FAQItem question="我的画别人看得到吗？">
+  在公共频道（如 #newbies）生成的图片是<strong>公开的</strong>，其他人都能看到。如果你想要私密生成，需要升级到 <strong>Pro 套餐</strong>（$60/月）才有"隐身模式"。
+</FAQItem>
+
+<FAQItem question="订阅后可以退款吗？">
+  如果你<strong>没有使用过</strong>任何生成次数，可以联系 Midjourney 客服申请退款。一旦生成过图片，就不支持退款了。所以建议想清楚再订阅。
+</FAQItem>
+
+<FAQItem question="为什么我发了 /imagine 没反应？">
+  可能的原因：
+  <ol>
+    <li>你还没有<strong>完成订阅</strong>——需要先付费才能使用</li>
+    <li>你发到了<strong>错误的频道</strong>——确保是在 Midjourney 服务器内的频道</li>
+    <li>服务器繁忙——等一两分钟再试</li>
+    <li>科学上网不稳定——检查网络连接</li>
+  </ol>
+</FAQItem>
+
+<FAQItem question="Midjourney 支持中文提示词吗？">
+  支持，但<strong>效果不如英文好</strong>。Midjourney 的训练数据以英文为主，英文提示词能更精确地表达你的想法。建议用英文写提示词，或者先让 ChatGPT 帮你把中文翻译成英文。
+</FAQItem>
+
+<FAQItem question="一个账号可以多个人用吗？">
+  不推荐。Midjourney 的订阅是<strong>和个人 Discord 账号绑定的</strong>，多人共用一个账号可能会违反使用条款，导致账号被封。
+</FAQItem>
+
+---
+
+<NextSteps
+  prev={{ title: '← DALL·E 提示词技巧', href: '/tutorials/ai-art/02-dalle-tips' }}
+  next={{ title: 'Midjourney 进阶技巧 →', href: '/tutorials/ai-art/04-midjourney-advanced' }}
+/>

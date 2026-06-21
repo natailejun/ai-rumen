@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="16"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#3b82f6" stroke-opacity="0.3" stroke-width="2" rx="15" stroke-dasharray="8 4"/>
+  <text x="400" y="195" text-anchor="middle" font-size="64" font-family="sans-serif">🔍</text>
+  <text x="400" y="260" text-anchor="middle" font-size="28" font-weight="bold" font-family="sans-serif" fill="#2563eb">DeepSeek 首页</text>
+  <text x="400" y="300" text-anchor="middle" font-size="16" font-family="sans-serif" fill="#94a3b8">截图待替换 · Screenshot Placeholder</text>
+</svg>

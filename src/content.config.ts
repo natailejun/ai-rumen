@@ -22,6 +22,8 @@ export const collections = {
           .optional(),
         screenshotCount: z.number().optional(),
         updatedAt: z.string().optional(),
+        premium: z.boolean().default(false),
+        premiumPrice: z.string().optional(),
       }),
     }),
   }),

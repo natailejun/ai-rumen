@@ -67,6 +67,14 @@ export default defineConfig({
           ],
         },
         {
+          label: 'AI 绘画',
+          collapsed: false,
+          badge: { text: '新', variant: 'tip' },
+          items: [
+            { autogenerate: { directory: 'tutorials/ai-art' } },
+          ],
+        },
+        {
           label: '参考资料',
           collapsed: true,
           items: [
