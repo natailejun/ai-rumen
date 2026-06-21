@@ -6,6 +6,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   site: 'https://natailejun.github.io',
   base: '/ai-rumen',
+  build: {
+    inlineStylesheets: 'always',
+  },
   integrations: [
     starlight({
       title: 'AI 入门指南',
